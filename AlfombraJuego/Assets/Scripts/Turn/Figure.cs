@@ -14,7 +14,7 @@ public class Figure : MonoBehaviour
 
     int level = 1;
     RecurseType type;
-
+    bool asigned = false;
     public RecurseType GetRecurseType() { 
         return type; 
     }
