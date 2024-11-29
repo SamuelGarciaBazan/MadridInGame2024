@@ -1,7 +1,16 @@
 using UnityEngine;
 
+//se encarga de la gestion del ciclo de turnos
 public class TurnManager : MonoBehaviour
 {
+    [SerializeField]
+    private int nodesPoints;
+
+    private int currentPoints;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

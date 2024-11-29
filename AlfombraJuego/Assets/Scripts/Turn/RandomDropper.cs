@@ -1,16 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomDropper : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //parametros publicos para editar las probabilidades
+
+
+
+    List<int> types = new List<int>();
+
+    //devuelve un set de figuras para elegir en esta ronda
+    public void getFiguresSet()
     {
-        
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

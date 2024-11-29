@@ -1,16 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    //lista de todos los nodos
+    List<Nodo> nodes = new List<Nodo>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //gestionar la conectividad entre nodos,grafo?
+
+
+
 }
