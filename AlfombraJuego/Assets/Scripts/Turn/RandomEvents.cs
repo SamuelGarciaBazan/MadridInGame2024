@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class RandomEvents : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+   
+    //devuelve un evento random que ocurrira en el juego
+    public void getRandomEvent()
     {
-        
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

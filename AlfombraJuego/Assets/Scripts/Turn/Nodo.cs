@@ -5,14 +5,25 @@ public class Nodo : MonoBehaviour
 {
 
     //estados finales 
-    List<int> estadosGlobales = new List<int>();
+    List<int> GlobalStates = new List<int>();
 
     //puede cambiar el tipo
-    List<int> modificadoresNegativos = new List<int>();
+    List<int> negativesModifiers = new List<int>();
 
     //figura que está colocada, cambiar por enum
-    int edificio = -1;
+    int figure = -1;
 
+
+    //para setear una figura
+    public void setFigure()
+    {
+
+    }
+
+    public void getGlobalStates()
+    {
+
+    }
 
   
 }

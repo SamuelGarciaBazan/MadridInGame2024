@@ -7,7 +7,7 @@ public class RandomDropper : MonoBehaviour
 
 
 
-    List<int> tipos = new List<int>();
+    List<int> types = new List<int>();
 
     //devuelve un set de figuras para elegir en esta ronda
     public void getFiguresSet()
