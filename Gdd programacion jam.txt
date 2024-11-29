@@ -1,0 +1,61 @@
+-4 tipos de necesidades
+	-ocio			-> morado
+	-seguridad		-> azul
+	-salud			-> rojo
+	-zonas verdes	-> verde
+
+
+
+
+-conectividad en el grafo
+-relación entre los tipos
+
+
+-huecos limitados
+-niveles de problemática (1 por tipo)
+-se pueden quitar figuras del juego,sin coste
+
+
+
+-eventos aleatorios
+-anticipación de eventos
+
+-eleccion de dados aleatorios (pool de datos)
+
+
+
+-turnos
+-X turnos por nivel, se puede seguir jugando (opcional)
+- 3 acciones por turno
+	-robar quita 1 punto
+	-poner quita 1 punto
+	-puedes terminar sin gastarlas todas
+- máximo de 3 figuras en mano
+- no se pueden descartar figuras
+
+
+GameManager
+	-NodosManager (lista de nodos)
+	-RandomDropper -> devuelve figuras
+	-RandomEvents -> devuelve evento aleatorio 
+	-FixedEvents -> gestiona eventos conocidos
+	-UI_Manager
+
+	-PickAndDropManager
+
+	-control de juego (next turn, gastar acciones)
+
+
+
+NodosManager
+	-lista de nodos
+	-Conectividad de nodos (lista de dependencias, grafo...)
+
+
+
+Nodo
+	-resultatos finales [4]
+	-modificadores [4] 
+	
+
+
