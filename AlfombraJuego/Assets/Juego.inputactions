@@ -6,7 +6,7 @@
             "id": "3d50324b-543f-42d0-b9c6-6568ea5365ac",
             "actions": [
                 {
-                    "name": "Drag",
+                    "name": "Drag&Drop",
                     "type": "Button",
                     "id": "c268e812-d91d-4a7a-9612-bf56feb39ea7",
                     "expectedControlType": "",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Drag",
+                    "action": "Drag&Drop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
