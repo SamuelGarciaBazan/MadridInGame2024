@@ -8,11 +8,19 @@ public class Nodo : MonoBehaviour
     List<int> globalStates = new List<int>((int)Figure.RecurseType.END_ENUM);
 
     //puede cambiar el tipo
+
+    //los valores estan en negativo
     List<int> negativesModifiers = new List<int>((int)Figure.RecurseType.END_ENUM);
 
     //figura que está colocada, cambiar por enum
     Figure figure = null;
 
+
+
+    public void addNegativeEffect(Figure.RecurseType type,int amount = 1)
+    {
+        negativesModifiers[(int)type] += amount;    
+    }
 
     //para setear una figura
     public bool setFigure(Figure fig)
@@ -41,5 +49,14 @@ public class Nodo : MonoBehaviour
         return globalStates;
     }
 
-  
+
+    private void Start()
+    {
+        for (int i = 0; i< (int)Figure.RecurseType.END_ENUM; i++)
+        {
+            globalStates.Add(0);
+            negativesModifiers.Add(0);
+
+        }
+    }
 }
