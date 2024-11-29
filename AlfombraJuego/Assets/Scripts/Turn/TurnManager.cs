@@ -9,7 +9,10 @@ public class TurnManager : MonoBehaviour
     private int currentPoints;
 
 
-
+    public void spendPoints(int n = 1) {
+    
+    
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

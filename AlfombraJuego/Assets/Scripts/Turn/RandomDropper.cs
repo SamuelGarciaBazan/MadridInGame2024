@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static Figure;
 
 public class RandomDropper : MonoBehaviour
 {
     //parametros publicos para editar las probabilidades
 
-
-
-    List<int> types = new List<int>();
 
     //devuelve un set de figuras para elegir en esta ronda
     public void getFiguresSet()
