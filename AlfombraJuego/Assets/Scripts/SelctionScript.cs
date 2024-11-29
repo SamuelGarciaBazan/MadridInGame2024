@@ -23,6 +23,7 @@ public class SelctionScript : MonoBehaviour
             preDragPosition = hit.transform.position;
             objectReference = hit.transform;
             reference.gameObject.SetActive(true);
+            objectReference.GetComponent<Rigidbody>().isKinematic = true;
             Debug.Log("TuViejaPick");
         }
         else if (context.canceled&&objectReference!=null)
@@ -35,8 +36,9 @@ public class SelctionScript : MonoBehaviour
             }
             else
             {
-                objectReference.position = preDragPosition;
+                objectReference.position = preDragPosition+new Vector3(0,heith,0);
             }
+            objectReference.GetComponent<Rigidbody>().isKinematic = false;
             objectReference = null;
             Debug.Log("TuViejaDrop");
             reference.gameObject.SetActive(false);
