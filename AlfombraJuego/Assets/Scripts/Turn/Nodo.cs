@@ -106,7 +106,7 @@ public class Nodo : MonoBehaviour
             return false;
         }
         else { //tipos iguales,actualizar modelo y sumar nivel
-            //TODO:upgrade
+            
 
 
             //destruimos la otra, actualizamos la actual
