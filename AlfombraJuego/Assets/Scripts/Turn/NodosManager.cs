@@ -124,6 +124,8 @@ public class NodosManager : MonoBehaviour
         for (int i = 0; i < nodes.Count; i++)
             adyacentes.Add(new List<int>());
 
+        //UIman = GetComponent<NodeUIManager>();
+
     }
 
 }

@@ -34,7 +34,7 @@ public class SelctionScript : MonoBehaviour
                 objectReference = hit.transform;
                 reference.gameObject.SetActive(true);
                 objectReference.GetComponent<Rigidbody>().isKinematic = true;
-                Debug.Log("TuViejaPick");
+                //Debug.Log("TuViejaPick");
             }
             //release
 
@@ -60,7 +60,7 @@ public class SelctionScript : MonoBehaviour
                     objectReference.GetComponent<Rigidbody>().isKinematic = false;
                 }
                 objectReference = null;
-                Debug.Log("TuViejaDrop");
+                //Debug.Log("TuViejaDrop");
                 reference.gameObject.SetActive(false);
 
             }
