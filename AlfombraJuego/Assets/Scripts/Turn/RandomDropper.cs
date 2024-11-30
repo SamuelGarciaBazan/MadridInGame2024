@@ -12,8 +12,8 @@ public class RandomDropper : MonoBehaviour
         public int waitingTurns;
     }
 
-
     static System.Random random = new System.Random();
+
     //parametros publicos para editar las probabilidades
 
 

@@ -1,16 +1,28 @@
+using System.Collections.Generic;
 using UnityEngine;
+using static RandomEvents;
 
 public class FixedEvents : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    static System.Random random = new System.Random();
+
+    [System.Serializable]
+    public struct FixedEventInfo
     {
-        
+        public int roundTime;
+        public List<RecurseEventData> fixedEvents;
     }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    public List<FixedEventInfo> fixedEventsList;
+
+    public List<RecurseEventData> getFixedEvents(int roundTime)
     {
-        
+        //si hay una lista con ese indice, se devuelve la sublista
+
+        //sino devolvemos null
+        return null;
     }
+
+
 }

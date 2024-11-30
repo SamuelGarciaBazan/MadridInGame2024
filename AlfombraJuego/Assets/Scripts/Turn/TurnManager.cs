@@ -9,10 +9,15 @@ public class TurnManager : MonoBehaviour
     private int currentPoints;
 
 
+    RandomDropper randomDropper;
+    RandomEvents randomEvents;
+    FixedEvents fixedEvents;
+
     public int getCurrentPoints()
     {
         return currentPoints;
     }
+
     public void spendPoints(int n = 1) {
     
     
@@ -21,6 +26,7 @@ public class TurnManager : MonoBehaviour
     void initializeTurn()
     {
         currentPoints = actionsPoints;
+
     }
 
     public void nextTurn()

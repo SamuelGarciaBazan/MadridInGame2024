@@ -1,17 +1,28 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class RandomEvents : MonoBehaviour
 {
-   
-    //devuelve un evento random que ocurrira en el juego
-    public Tuple<Figure.RecurseType,int> getRandomEvent()
+    [System.Serializable]
+    public struct RecurseEventData
     {
-        //recurso , cantidad
-        Tuple<Figure.RecurseType, int> tuple = new Tuple<Figure.RecurseType, int>(Figure.RecurseType.END_ENUM, 0);
+        public Figure.RecurseType type;
+        public int cantidad;
+        public int targetNodeIndex;
+    }
 
+    static System.Random random = new System.Random();
 
-        return tuple;
+    //devuelve un evento random que ocurrira en el juego
+    public RecurseEventData getRandomEvent()
+    {
+        RecurseEventData data = new RecurseEventData();
+
+        data.type = (Figure.RecurseType)random.Next(0, (int)Figure.RecurseType.END_ENUM);
+        data.cantidad = random.Next(1, 3); //random de 1-2
+
+        return data;
     }
 
 
