@@ -1,16 +1,25 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class NodoUIBocadillo : MonoBehaviour
 {
     Image bocadilloImage; 
     
-    BocadillosImagesManager imagesManager;
+    private BocadillosImagesManager imagesManager;
 
-    private void Start()
+    private void OnEnable()
     {
-        imagesManager 
+        bocadilloImage = GetComponent<Image>();
+        imagesManager = BocadillosImagesManager.Instance;
     }
+    //private void Start()
+    //{
+    //    bocadilloImage = GetComponent<Image>();
+    //    imagesManager = BocadillosImagesManager.Instance;
+    //}
 
-
+    public void setBocadillo(Figure.RecurseType type)
+    {
+        bocadilloImage.sprite = imagesManager.images[(int)type];
+    }
 }

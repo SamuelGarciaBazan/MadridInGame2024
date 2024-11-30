@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -13,10 +14,6 @@ public class BocadillosImagesManager : MonoBehaviour
     {
         get
         {
-            if (_instance == null)
-            {
-                _instance = new BocadillosImagesManager();
-            }
             return _instance;
         }
     }

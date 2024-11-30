@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7657228624818618918}
   - component: {fileID: 430822938621987136}
   m_Layer: 8
-  m_Name: Canvas 1
+  m_Name: Bocadillos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
