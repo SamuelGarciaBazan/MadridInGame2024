@@ -13,7 +13,7 @@ public class Nodo : MonoBehaviour
     //los valores estan en negativo
     List<int> negativesModifiers = new List<int>((int)Figure.RecurseType.END_ENUM);
 
-    //figura que está colocada, cambiar por enum
+    //figura que estï¿½ colocada, cambiar por enum
     Figure figure = null;
 
 
