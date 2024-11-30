@@ -23,10 +23,47 @@ public class RandomDropper : MonoBehaviour
     [SerializeField]
     List<GameObject> firgurePrefabs = new List<GameObject>();
 
+    [System.Serializable]
+    public class RandomDropperConfig
+    {
+        //probabilidad para cada tipo, END_ENUM = carreteras, DEBEN SUMAR 100
+        public List<int> typeChances = new List<int>((int)Figure.RecurseType.END_ENUM+1);
+
+        //niveles de los objetos
+        public List<int> levels = new List<int>();
+
+        //probabilidad para cada nivel, DEBEN SUMAR 100
+        public List<int> levelsChances = new List<int>();
+
+
+        //lista de rondas que tendrán si o si una carretera 
+        public List<int> roundsWithRoad = new List<int>();
+
+    }
+
+    [SerializeField]
+    int nFigures ; //numero de figuras a elegir
+
+
+    [SerializeField]
+    RandomDropperConfig config;
+
     //devuelve un set de figuras para elegir en esta ronda
-    private List<FigureDropData> getFiguresSet(int nDrops)
+    private List<FigureDropData> getFiguresSet(int currRound,int nDrops)
     {
         List<FigureDropData> figureDropDatas = new List<FigureDropData>();
+
+
+        bool road = false;
+
+        for(int i = 0; i < config.roundsWithRoad.Count; i++)
+        {
+            if(currRound == i)
+            {
+                road = true;
+                break;
+            }
+        }
 
         //rellenar la lista
         for (int i = 0; i < nDrops; i++)
@@ -34,7 +71,19 @@ public class RandomDropper : MonoBehaviour
             FigureDropData data = new FigureDropData();
 
 
-            data.type = (Figure.RecurseType)random.Next(0,(int)Figure.RecurseType.END_ENUM+1);
+            //añadir la carretera si toca
+            if(road && i == 0)
+            {
+                data.type = Figure.RecurseType.END_ENUM;
+
+                figureDropDatas.Add(data);
+
+                continue;
+            }
+
+
+
+            data.type = (Figure.RecurseType)random.Next(0,(int)Figure.RecurseType.END_ENUM);
 
             if (data.type == Figure.RecurseType.END_ENUM)
             {
@@ -59,25 +108,29 @@ public class RandomDropper : MonoBehaviour
         return figureDropDatas;
     }
 
-    public List<FigureDropData> getFiguresSet()
+    public List<FigureDropData> getFiguresSet(int currRound)
     {
-        return getFiguresSet(transforms.Count);
+        return getFiguresSet(currRound,transforms.Count);
     }
 
-    public List<FigureDropData> generateFigures()
+    public List<FigureDropData> generateFigures(int currRound)
     {
         // Primero borramos las figuras ya generadas
         deleteFigures();
 
+
+        print("1");
         // Generamos una nueva lista de figuras
-        List<FigureDropData> listaFiguras = getFiguresSet(transforms.Count);
+        List<FigureDropData> listaFiguras = getFiguresSet(currRound,nFigures);
+
+        print(listaFiguras.Count);
+
 
         // Instanciamos la nueva lista
         for (int i = 0; i < listaFiguras.Count; i++)
         {
             //print((int)listaFiguras[i].type);
 
-            //print(listaFiguras.Count);
 
             GameObject aux = Instantiate(firgurePrefabs[(int)listaFiguras[i].type], transforms[i]);
             aux.GetComponent<Figure>().setFigure(listaFiguras[i]);

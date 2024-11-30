@@ -59,6 +59,10 @@ MonoBehaviour:
   - {fileID: 1628193990099535907, guid: c1a0dca13a32127409e3c81ac6f109b8, type: 3}
   - {fileID: 2342683300397298184, guid: fba7fc91ef14d1f42a38d7e7b6e14e4e, type: 3}
   - {fileID: 9079427351798256331, guid: fd72e12b1c9c42f4caa7f3dd404a96df, type: 3}
+  config:
+    typeChances: 0000000000000000000000000000000000000000
+    levels: 010000000200000003000000
+    levelsChances: 000000000000000000000000
 --- !u!114 &4559332553820217097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +76,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionsPoints: 3
-  nFigures: 4
   randomDropper: {fileID: 3877779822593757292}
   randomEvents: {fileID: 1203891185359973871}
   fixedEvents: {fileID: 1411296099036708861}
@@ -90,7 +93,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9601b1e8a84827a45b6d009d915b5da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedEventsList: []
+  fixedEventsList:
+  - roundTime: 3
+    fixedEvents:
+    - type: 0
+      cantidad: 1
+      targetNodeIndex: 0
+    - type: 0
+      cantidad: 1
+      targetNodeIndex: 1
+    - type: 0
+      cantidad: 1
+      targetNodeIndex: 2
+    - type: 0
+      cantidad: 1
+      targetNodeIndex: 3
+    - type: 0
+      cantidad: 1
+      targetNodeIndex: 4
 --- !u!114 &1203891185359973871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,3 +124,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnManager: {fileID: 4559332553820217097}
+  config:
+    typeChances: 32000000000000000000000000000000
+    cantidades: 010000000200000003000000
+    cantidadesChances: 5a0000000500000005000000
+    nodesChances: 1400000014000000140000001400000014000000
+    typeChancesUniform: 0
+    cantidadesUniform: 2
+    cantidadesChancesUniform: 0
+    nodesChancesUniform: 0
