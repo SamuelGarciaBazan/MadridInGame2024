@@ -37,6 +37,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     Mano mano;
 
+    [SerializeField] GameObject buttonNextTurn;
+    [SerializeField] GameObject buttonFinishLevel;
+    [SerializeField] GameObject gameOverPanel;
+
     public int getNodosCount()
     {
         return nodosManager.GetNodes().Count;
@@ -112,6 +116,11 @@ public class TurnManager : MonoBehaviour
         currEventData = randomEvents.getRandomEvent();
         //currFiguresSet = randomDropper.getFiguresSet(nFigures);
         currFixedEvents = fixedEvents.getFixedEvents(currentRound);
+
+        if(currFixedEvents != null) {
+            buttonFinishLevel.SetActive(true);
+            buttonNextTurn.SetActive(false);
+        }
     }
 
 
@@ -175,7 +184,7 @@ public class TurnManager : MonoBehaviour
 
     void checkWinDefeatConditions()
     {
-
+        
     }
 
     public void nextTurn()
@@ -214,11 +223,17 @@ public class TurnManager : MonoBehaviour
         //importante
         nodosManager.uptateAllNodesStats();
 
-        checkWinDefeatConditions();
-
 
 
     }
+
+
+    public void FinishLevel() {
+        checkWinDefeatConditions();
+        gameOverPanel.SetActive(true);
+    }
+
+
     void Start()
     {
         initializeTurn();
