@@ -69,7 +69,7 @@ public class Nodo : MonoBehaviour
                 //transitividad negativa
                 for (int j = 0; j < negMods.Count; j++)
                 {
-                    globalStates[j] += -negativesModifiers[j];
+                    globalStates[j] += -negMods[j];
                     Debug.Log("SeVino");
                 }
             }
