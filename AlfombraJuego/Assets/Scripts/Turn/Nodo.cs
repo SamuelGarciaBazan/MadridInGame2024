@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class Nodo : MonoBehaviour
 {
@@ -38,8 +39,8 @@ public class Nodo : MonoBehaviour
             return false;
         }
         else { //tipos iguales,actualizar modelo y sumar nivel
-
-
+            //TODO:upgrade
+            Destroy(fig.gameObject);
             return true;
         }
     }

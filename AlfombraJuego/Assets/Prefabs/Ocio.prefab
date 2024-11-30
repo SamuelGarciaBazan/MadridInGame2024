@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7755955340994973822}
   - component: {fileID: 4575248155745226025}
   - component: {fileID: -6403293141305535421}
+  - component: {fileID: -5763734726965305393}
   m_Layer: 7
   m_Name: Ocio
   m_TagString: Untagged
@@ -136,3 +137,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5763734726965305393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622725621521450277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7784c04dcf2964abf61c7817f439fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  type: 1

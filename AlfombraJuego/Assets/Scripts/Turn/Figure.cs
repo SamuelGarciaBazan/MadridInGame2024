@@ -11,8 +11,9 @@ public class Figure : MonoBehaviour
         ZONAS_VERDES,
         END_ENUM
     }
-
+    [SerializeField]
     int level = 1;
+    [SerializeField]
     RecurseType type;
 
     public RecurseType GetRecurseType() { 
