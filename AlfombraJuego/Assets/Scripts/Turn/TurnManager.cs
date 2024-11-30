@@ -163,6 +163,7 @@ public class TurnManager : MonoBehaviour
     System.Collections.IEnumerator corrutinaBocadillo()
     {
 
+        print("a");
         var obj = nodosManager.GetNodes()[currEventData.targetNodeIndex].transform.GetChild(1).gameObject;
         obj.SetActive(true);
 
