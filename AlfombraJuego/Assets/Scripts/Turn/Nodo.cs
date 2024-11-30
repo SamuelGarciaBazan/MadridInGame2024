@@ -28,17 +28,21 @@ public class Nodo : MonoBehaviour
         //si esta vacio
         if (figure == null)
         {
+            Debug.Log("Colocado");
             figure = fig;
             return true;
         }
         else if (figure.GetRecurseType() != fig.GetRecurseType()) //tipos distintos no hacer nada
         {
-
+            Debug.Log("No valido");
 
             return false;
         }
         else { //tipos iguales,actualizar modelo y sumar nivel
             //TODO:upgrade
+
+
+            Debug.Log("Mejorado");
             Destroy(fig.gameObject);
             return true;
         }
