@@ -58,7 +58,7 @@ public class RandomDropper : MonoBehaviour
 
         for(int i = 0; i < config.roundsWithRoad.Count; i++)
         {
-            if(currRound == i)
+            if(currRound == config.roundsWithRoad[i])
             {
                 road = true;
                 break;
