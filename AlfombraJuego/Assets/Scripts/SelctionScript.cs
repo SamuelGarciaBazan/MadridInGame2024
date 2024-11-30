@@ -193,6 +193,13 @@ public class SelctionScript : MonoBehaviour
 
                         objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.CARRETERA);
 
+                        objectReference.transform.localScale = new Vector3(1, 1, 1.22f);
+                        objectReference.localRotation = Quaternion.identity;
+
+                        objectReference.position = new Vector3(
+                                                objectReference.position.x, 0.08f   ,
+                                                    objectReference.position.z);
+
                     }
                     // CASO 2 : DE LA MANO A UNA CARRETERA
                     else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Carretera")) &&    // Si se suelta en un nodo
@@ -226,6 +233,16 @@ public class SelctionScript : MonoBehaviour
                         objectReference.SetParent(hit.collider.transform);
 
                         objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.CARRETERA);
+
+                        objectReference.transform.localScale = new Vector3(1,1,1.22f);
+                        objectReference.localRotation = Quaternion.identity;
+
+                        objectReference.position = new Vector3(
+                                                objectReference.position.x, 0.08f,
+                                                    objectReference.position.z);
+
+                        
+
                     }
                     // CASO 3 : DEL TREN A LA MANO
                     else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&   // Si se suelta en la mano
