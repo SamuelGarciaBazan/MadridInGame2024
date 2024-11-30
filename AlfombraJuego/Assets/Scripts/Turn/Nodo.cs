@@ -27,9 +27,12 @@ public class Nodo : MonoBehaviour
     {
         Debug.Log("TusMuertoPisao");
         print(" levelfigure: " + figure.GetLevel());
+
+
         for (int i = 0; i < globalStates.Count; i++)
         {
-            globalStates[i] = -negativesModifiers[i];
+            //globalStates[i] = -negativesModifiers[i];
+            globalStates[i] = 0;
         }
 
         //version solo mirar el propio nodo
@@ -66,7 +69,7 @@ public class Nodo : MonoBehaviour
                 //transitividad negativa
                 for (int j = 0; j < negMods.Count; j++)
                 {
-                    globalStates[j] += -negativesModifiers[j];
+                    globalStates[j] += -negMods[j];
                     Debug.Log("SeVino");
                 }
             }
