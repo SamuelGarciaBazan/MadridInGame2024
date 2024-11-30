@@ -74,7 +74,7 @@ public class RandomDropper : MonoBehaviour
         // Instanciamos la nueva lista
         for (int i = 0; i < listaFiguras.Count; i++)
         {
-            GameObject aux = Instantiate(firgurePrefabs[Math.Clamp((int)listaFiguras[i].type, 0, 3)], transforms[i]);
+            GameObject aux = Instantiate(firgurePrefabs[(int)listaFiguras[i].type], transforms[i]);
             aux.GetComponent<Figure>().setFigure(listaFiguras[i]);
         }
         return listaFiguras;
