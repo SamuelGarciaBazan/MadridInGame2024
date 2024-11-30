@@ -231,7 +231,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.1158357, y: 1.7666698, z: -1.6861632}
-  m_LocalScale: {x: 0.32825, y: 0.32825, z: 0.32825}
+  m_LocalScale: {x: 0.6936227, y: 0.6936227, z: 0.6936227}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1805,7 +1805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 69980211}
-  heith: 1
+  heith: 3
 --- !u!114 &1219242708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,6 +2374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428736584}
   - component: {fileID: 1428736585}
+  - component: {fileID: 1428736586}
   m_Layer: 0
   m_Name: Random
   m_TagString: Untagged
@@ -2418,6 +2419,24 @@ MonoBehaviour:
   - {fileID: 7622725621521450277, guid: 52ecb020c95bd964f88e7cca3a8bb895, type: 3}
   - {fileID: 1628193990099535907, guid: c1a0dca13a32127409e3c81ac6f109b8, type: 3}
   - {fileID: 2342683300397298184, guid: fba7fc91ef14d1f42a38d7e7b6e14e4e, type: 3}
+--- !u!114 &1428736586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428736583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a0efdce0a435d4ea7aa5992368050b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionsPoints: 3
+  nFigures: 4
+  randomDropper: {fileID: 1428736585}
+  randomEvents: {fileID: 0}
+  fixedEvents: {fileID: 0}
+  nodosManager: {fileID: 0}
 --- !u!224 &1549250690 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1329591566624075065, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
@@ -3375,8 +3394,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.9622642, g: 0.7358265, b: 0.47508007, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.98
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3419,8 +3438,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 4712
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
