@@ -11,8 +11,10 @@ public class TurnManager : MonoBehaviour
 
     private int currentPoints;
 
-    private int currentRound = 0;
+    public int CurrentActions {  get { return currentPoints; } }
 
+    private int currentRound = 1;
+    public int CurrentRound {  get { return currentRound; } }
     
     RecurseEventData currEventData;
 
