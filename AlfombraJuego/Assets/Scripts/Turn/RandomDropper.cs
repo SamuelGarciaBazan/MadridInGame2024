@@ -27,9 +27,15 @@ public class RandomDropper : MonoBehaviour
         {
             FigureDropData data = new FigureDropData();
 
+
             data.type = (Figure.RecurseType)random.Next(0,(int)Figure.RecurseType.END_ENUM+1);
 
-            if (data.type == Figure.RecurseType.END_ENUM) continue;
+            if (data.type == Figure.RecurseType.END_ENUM)
+            {
+                figureDropDatas.Add(data);
+
+                continue;
+            }
 
             data.level = random.Next(1,3);//devuelve 1 o 2
 
@@ -39,6 +45,8 @@ public class RandomDropper : MonoBehaviour
             else {
                 data.waitingTurns = 0;
             }
+            figureDropDatas.Add(data);
+
         }
 
 

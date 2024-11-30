@@ -19,7 +19,10 @@ public class FixedEvents : MonoBehaviour
     public List<RecurseEventData> getFixedEvents(int roundTime)
     {
         //si hay una lista con ese indice, se devuelve la sublista
-
+        for(int i = 0; i < fixedEventsList.Count; i++)
+        {
+            if(fixedEventsList[i].roundTime == roundTime) return fixedEventsList[i].fixedEvents;
+        }
         //sino devolvemos null
         return null;
     }
