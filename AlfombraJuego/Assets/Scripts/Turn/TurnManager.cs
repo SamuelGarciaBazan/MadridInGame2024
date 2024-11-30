@@ -13,9 +13,6 @@ public class TurnManager : MonoBehaviour
 
     private int currentRound = 0;
 
-    [SerializeField]
-    private int nFigures = 0; //se usa para ver cuantos te dan por partida
-
     
     RecurseEventData currEventData;
 
