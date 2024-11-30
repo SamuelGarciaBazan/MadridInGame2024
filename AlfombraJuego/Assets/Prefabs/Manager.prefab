@@ -59,10 +59,12 @@ MonoBehaviour:
   - {fileID: 1628193990099535907, guid: c1a0dca13a32127409e3c81ac6f109b8, type: 3}
   - {fileID: 2342683300397298184, guid: fba7fc91ef14d1f42a38d7e7b6e14e4e, type: 3}
   - {fileID: 9079427351798256331, guid: fd72e12b1c9c42f4caa7f3dd404a96df, type: 3}
+  nFigures: 4
   config:
-    typeChances: 0000000000000000000000000000000000000000
-    levels: 010000000200000003000000
-    levelsChances: 000000000000000000000000
+    typeChances: 00000000640000000000000000000000
+    levels: 0100000002000000
+    levelsChances: 460000001e000000
+    roundsWithRoad: 0200000005000000
 --- !u!114 &4559332553820217097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +83,9 @@ MonoBehaviour:
   fixedEvents: {fileID: 1411296099036708861}
   nodosManager: {fileID: 0}
   mano: {fileID: 0}
+  buttonNextTurn: {fileID: 0}
+  buttonFinishLevel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
 --- !u!114 &1411296099036708861
 MonoBehaviour:
   m_ObjectHideFlags: 0
