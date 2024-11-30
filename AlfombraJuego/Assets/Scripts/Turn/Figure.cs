@@ -71,13 +71,14 @@ public class Figure : MonoBehaviour
         return level;
     }
 
-    public void UpgradeLevel() 
+    public bool UpgradeLevel() 
     {
         if(level < maxLevel) {
             level++;
             SetVisualBasedOnLevel();
+            return true;
         }
-
+        return false;
     }
 
     private void SetVisualBasedOnLevel() {

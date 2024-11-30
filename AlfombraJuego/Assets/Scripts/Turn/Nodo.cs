@@ -106,8 +106,8 @@ public class Nodo : MonoBehaviour
             return false;
         }
         else { //tipos iguales,actualizar modelo y sumar nivel
-            
 
+            if(!figure.UpgradeLevel()) return false; // si no se puede subir nivel (porque nivelMax) se devuelve false
 
             //destruimos la otra, actualizamos la actual
             Debug.Log("Mejorado");

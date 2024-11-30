@@ -100,6 +100,7 @@ MonoBehaviour:
   maxLevel: 1
   type: 2
   placement: 0
+  waitingTurns: 0
 --- !u!1 &2737619893899584318
 GameObject:
   m_ObjectHideFlags: 0
