@@ -4,23 +4,34 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     [SerializeField]
-    private int nodesPoints;
+    private int actionsPoints;
 
     private int currentPoints;
 
 
+    public int getCurrentPoints()
+    {
+        return currentPoints;
+    }
     public void spendPoints(int n = 1) {
     
     
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void initializeTurn()
     {
-        
+        currentPoints = actionsPoints;
     }
 
-    // Update is called once per frame
+    public void nextTurn()
+    {
+        print("next turn");
+    }
+    void Start()
+    {
+        initializeTurn();
+    }
+
     void Update()
     {
         

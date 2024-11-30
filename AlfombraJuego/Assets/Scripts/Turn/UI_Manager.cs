@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEditor.UI;
+using TMPro;
 
 public class UI_Manager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private TextMeshProUGUI textActions;
 
-    // Update is called once per frame
+    [SerializeField]
+    private TurnManager turnManager;
+
+
     void Update()
     {
-        
+        textActions.text = "Actions: " + turnManager.getCurrentPoints();
     }
 }

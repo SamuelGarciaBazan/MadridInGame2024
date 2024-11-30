@@ -17,7 +17,6 @@ public class Nodo : MonoBehaviour
     Figure figure = null;
 
 
-
     public void addNegativeEffect(Figure.RecurseType type,int amount = 1)
     {
         negativesModifiers[(int)type] += amount;    
@@ -55,6 +54,7 @@ public class Nodo : MonoBehaviour
     {
         for (int i = 0; i< (int)Figure.RecurseType.END_ENUM; i++)
         {
+            //inicializar los arrays
             globalStates.Add(0);
             negativesModifiers.Add(0);
 
