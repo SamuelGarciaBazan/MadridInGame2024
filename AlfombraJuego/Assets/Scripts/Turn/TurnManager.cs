@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
+using static RandomDropper;
+using static RandomEvents;
 
 //se encarga de la gestion del ciclo de turnos
 public class TurnManager : MonoBehaviour
@@ -13,7 +16,12 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     private int nFigures = 0;
 
+    
+    RecurseEventData currEventData;
 
+    List<FigureDropData> currFiguresSet;
+
+    List<RecurseEventData> currFixedEvents;
 
     [SerializeField]
     RandomDropper randomDropper;
@@ -48,38 +56,57 @@ public class TurnManager : MonoBehaviour
 
     }
 
-    public void nextTurn()
+    private void debugNextTurn()
     {
-        currentRound++;
         print("Enter in next turn");
         print($"Current Round: {currentRound}");
 
-        var v1  = randomEvents.getRandomEvent();
+        
 
-        print("Random event: Type:  " + v1.type + " cantidad " +v1.cantidad + " targetnodeID: " + v1.targetNodeIndex);
+        print("Random event: Type:  " + currEventData.type +
+            " cantidad " +currEventData.cantidad + " targetnodeID: " + 
+            currEventData.targetNodeIndex);
 
-        var v2 = randomDropper.getFiguresSet(nFigures);
 
-        for (int i = 0; i < v2.Count; i++)
+        for (int i = 0; i < currFiguresSet.Count; i++)
         {
-            print("Random droper "+ i + " Type " + v2[i].type + " Level " +v2[i].level + " WaitingTurns " + v2[i].waitingTurns);
+            print("Random droper "+ i + 
+                " Type " + currFiguresSet[i].type + " Level " 
+                +currFiguresSet[i].level + " WaitingTurns " + currFiguresSet[i].waitingTurns);
 
         }
-        var v3 = fixedEvents.getFixedEvents(currentRound);
+       
 
-        if(v3 == null)
+        if (currFixedEvents == null)
         {
             print("No fixed events this turn");
         }
         else
         {
-            for(int i = 0;i < v3.Count; i++)
+            for (int i = 0; i < currFixedEvents.Count; i++)
             {
-                print("Fixed event: Type:  " + v3[i].type + " cantidad " +v3[i].cantidad + " targetnodeID: " + v3[i].targetNodeIndex);
+                print("Fixed event: Type:  " 
+                    + currFixedEvents[i].type +
+                    " cantidad " +currFixedEvents[i].cantidad + 
+                    " targetnodeID: " + currFixedEvents[i].targetNodeIndex);
 
             }
 
         }
+    }
+
+    void getInput()
+    {
+        currEventData = randomEvents.getRandomEvent();
+        currFiguresSet = randomDropper.getFiguresSet(nFigures);
+        currFixedEvents = fixedEvents.getFixedEvents(currentRound);
+    }
+    public void nextTurn()
+    {
+        currentRound++;
+        getInput();
+        
+        debugNextTurn();
 
     }
     void Start()
