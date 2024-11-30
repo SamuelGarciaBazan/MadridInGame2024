@@ -18,6 +18,9 @@ public class Nodo : MonoBehaviour
     //figura que est� colocada, cambiar por enum
     Figure figure = null;
 
+   
+    [SerializeField]
+    NodosManager nodosManager = null;
 
     //recalcula los estados por si han cambiado
     public void updateGlobalStates()
@@ -27,11 +30,39 @@ public class Nodo : MonoBehaviour
             globalStates[i] = -negativesModifiers[i];
         }
 
+        //version solo mirar el propio nodo
         if (figure != null)
         {
             globalStates[(int)figure.GetRecurseType()] += figure.GetLevel();
         }
 
+        //version mirando los adyacentes
+        if(nodosManager  != null)
+        {
+            List<Nodo> conectados;
+
+            conectados = nodosManager.GetConectedNodes(this);
+
+            for (int i = 0; i < conectados.Count; i++) { 
+            
+                Figure fig = conectados[i].GetFigure();
+                
+                //transitividad buena
+                if(figure != null) 
+                    globalStates[(int)fig.GetRecurseType()] += fig.GetLevel();
+
+
+                List<int> negMods;
+
+                negMods = conectados[i].GetNegativeModifiers();
+
+                //transitividad negativa
+                for (int j = 0; j < negMods.Count; j++)
+                {
+                    globalStates[j] = -negativesModifiers[j];
+                }
+            }
+        }
 
     }
 
@@ -72,11 +103,17 @@ public class Nodo : MonoBehaviour
         }
     }
 
+    public Figure GetFigure()
+    {
+        return figure;
+    }
     public List<int> getGlobalStates()
     {
         return globalStates;
     }
 
+    public List<int> GetNegativeModifiers()
+        { return negativesModifiers; }
 
     private void Start()
     {
