@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class NodosManager : MonoBehaviour
 {
     //lista de todos los nodos
-    List<Nodo> nodes = new List<Nodo>();
+    [SerializeField]
+    private List<Nodo> nodes = new List<Nodo>();
 
     public List<Nodo> GetNodes()
     {
@@ -12,7 +13,5 @@ public class NewMonoBehaviourScript : MonoBehaviour
     }
 
     //gestionar la conectividad entre nodos,grafo?
-
-
 
 }

@@ -15,8 +15,10 @@ public class Figure : MonoBehaviour
 
     [SerializeField]
     int level = 1;
+
     [SerializeField]
     RecurseType type;
+
     bool asigned = false;
     
     public RecurseType GetRecurseType() { 
