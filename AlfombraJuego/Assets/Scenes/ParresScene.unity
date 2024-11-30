@@ -6779,6 +6779,18 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.cantidades.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.cantidades.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.cantidades.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: config.cantidadesChancesUniform
       value: 0
       objectReference: {fileID: 0}
@@ -6787,8 +6799,40 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.nodesChances.Array.data[0]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.nodesChances.Array.data[1]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.nodesChances.Array.data[2]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.nodesChances.Array.data[3]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.nodesChances.Array.data[4]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: config.cantidadesChances.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.cantidadesChances.Array.data[0]'
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.cantidadesChances.Array.data[1]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.cantidadesChances.Array.data[2]'
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.size
