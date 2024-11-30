@@ -77,6 +77,8 @@ public class Nodo : MonoBehaviour
             }
         }
 
+
+        UIman.updateUI(globalStates);
     }
 
     public void addNegativeEffect(Figure.RecurseType type,int amount = 1)
@@ -140,5 +142,8 @@ public class Nodo : MonoBehaviour
         }
         nodosManager = GetComponentInParent<NodosManager>();
         UIman = GetComponent<NodeUIManager>();
+
+        UIman.updateUI(globalStates);
+
     }
 }

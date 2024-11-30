@@ -14,7 +14,7 @@ public class NodeUIManager : MonoBehaviour
 
     public void updateUI(List<int> lst)
     {
-        Debug.Log(lst);
+        //Debug.Log(lst);
         int i = 0;
         foreach(var t in values)
         {
@@ -30,6 +30,7 @@ public class NodeUIManager : MonoBehaviour
         {
             t.text = 2.ToString();//GetComponent<Nodo>().getGlobalStates()[i].ToString();
         }
+
     }
 
     // Update is called once per frame

@@ -107,7 +107,7 @@ public class NodosManager : MonoBehaviour
 
     public void uptateAllNodesStats()
     {
-        for(int i = 0; i <= nodes.Count; i++)
+        for(int i = 0; i < nodes.Count; i++)
         {
             nodes[i].updateGlobalStates();
         }

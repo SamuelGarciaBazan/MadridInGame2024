@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using static Figure;
@@ -74,6 +75,10 @@ public class RandomDropper : MonoBehaviour
         // Instanciamos la nueva lista
         for (int i = 0; i < listaFiguras.Count; i++)
         {
+            //print((int)listaFiguras[i].type);
+
+            //print(listaFiguras.Count);
+
             GameObject aux = Instantiate(firgurePrefabs[(int)listaFiguras[i].type], transforms[i]);
             aux.GetComponent<Figure>().setFigure(listaFiguras[i]);
         }
