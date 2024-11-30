@@ -170,6 +170,8 @@ public class TurnManager : MonoBehaviour
         applyLogicCurrFigures();
         applyLogicCurrFixedEvents();
 
+        //importante
+        nodosManager.uptateAllNodesStats();
 
         checkWinDefeatConditions();
 

@@ -23,7 +23,7 @@ public class RandomDropper : MonoBehaviour
     List<GameObject> firgurePrefabs = new List<GameObject>();
 
     //devuelve un set de figuras para elegir en esta ronda
-    public List<FigureDropData> getFiguresSet(int nDrops)
+    private List<FigureDropData> getFiguresSet(int nDrops)
     {
         List<FigureDropData> figureDropDatas = new List<FigureDropData>();
 
@@ -65,13 +65,28 @@ public class RandomDropper : MonoBehaviour
 
     public List<FigureDropData> generateFigures()
     {
+        // Primero borramos las figuras ya generadas
+        deleteFigures();
+
+        // Generamos una nueva lista de figuras
         List<FigureDropData> listaFiguras = getFiguresSet(transforms.Count);
+
+        // Instanciamos la nueva lista
         for (int i = 0; i < listaFiguras.Count; i++)
         {
-            GameObject aux = Instantiate(firgurePrefabs[Math.Clamp((int)listaFiguras[i].type, 0, 3)], transforms[i]);
+            GameObject aux = Instantiate(firgurePrefabs[(int)listaFiguras[i].type], transforms[i]);
             aux.GetComponent<Figure>().setFigure(listaFiguras[i]);
         }
         return listaFiguras;
+    }
+
+
+    public void deleteFigures() {
+        for(int i = 0; i < transforms.Count; i++) {
+            if(transforms[i].childCount > 0) {
+                Destroy(transforms[i].GetChild(0).gameObject);
+            }
+        }
     }
 
     private void Start()

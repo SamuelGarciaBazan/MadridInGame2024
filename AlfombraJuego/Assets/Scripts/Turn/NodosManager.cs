@@ -56,7 +56,7 @@ public class NodosManager : MonoBehaviour
 
         //dfs
 
-        print("mi vertice es: " +  v);  
+        //print("mi vertice es: " +  v);  
 
         dfs(v, visit);
 
@@ -71,7 +71,7 @@ public class NodosManager : MonoBehaviour
             if (visit[i])
             {
                 resp.Add(nodes[i]);
-                print("añadido vertice :" +  i);
+                //print("añadido vertice :" +  i);
             }
         }
 
