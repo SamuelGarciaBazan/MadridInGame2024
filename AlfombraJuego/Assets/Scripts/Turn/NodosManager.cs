@@ -55,6 +55,9 @@ public class NodosManager : MonoBehaviour
             visit.Add(false);
 
         //dfs
+
+        print("mi vertice es: " +  v);  
+
         dfs(v, visit);
 
 
@@ -65,7 +68,11 @@ public class NodosManager : MonoBehaviour
 
         for(int i = 0;i < visit.Count; i++)
         {
-            if(visit[i]) resp.Add(nodes[i]);
+            if (visit[i])
+            {
+                resp.Add(nodes[i]);
+                print("añadido vertice :" +  i);
+            }
         }
 
         return resp;
@@ -98,7 +105,16 @@ public class NodosManager : MonoBehaviour
         return true;
     }
 
+    public void uptateAllNodesStats()
+    {
+        for(int i = 0; i <= nodes.Count; i++)
+        {
+            nodes[i].updateGlobalStates();
+        }
 
+
+
+    }
     private void Start()
     {
         //captura los nodos de los hijos (su orden se ve determinado por el orden de la jerarquia)

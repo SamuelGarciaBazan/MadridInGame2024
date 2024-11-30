@@ -59,7 +59,7 @@ public class TurnManager : MonoBehaviour
     void initializeTurn()
     {
         currentPoints = actionsPoints;
-        randomDropper.generateFigures();
+        currFiguresSet =  randomDropper.generateFigures();
     }
 
     private void debugNextTurn()
@@ -104,7 +104,7 @@ public class TurnManager : MonoBehaviour
     void getInput()
     {
         currEventData = randomEvents.getRandomEvent();
-        currFiguresSet = randomDropper.getFiguresSet(nFigures);
+        //currFiguresSet = randomDropper.getFiguresSet(nFigures);
         currFixedEvents = fixedEvents.getFixedEvents(currentRound);
     }
 

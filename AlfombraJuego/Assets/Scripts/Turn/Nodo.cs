@@ -25,6 +25,8 @@ public class Nodo : MonoBehaviour
     //recalcula los estados por si han cambiado
     public void updateGlobalStates()
     {
+        Debug.Log("TusMuertoPisao");
+        print(" levelfigure: " + figure.GetLevel());
         for (int i = 0; i < globalStates.Count; i++)
         {
             globalStates[i] = -negativesModifiers[i];
@@ -33,12 +35,13 @@ public class Nodo : MonoBehaviour
         //version solo mirar el propio nodo
         if (figure != null)
         {
-            globalStates[(int)figure.GetRecurseType()] += figure.GetLevel();
+            //globalStates[(int)figure.GetRecurseType()] += figure.GetLevel();
         }
 
         //version mirando los adyacentes
         if(nodosManager  != null)
         {
+            Debug.Log("LatuyaPorSiAcaso");
             List<Nodo> conectados;
 
             conectados = nodosManager.GetConectedNodes(this);
@@ -48,8 +51,12 @@ public class Nodo : MonoBehaviour
                 Figure fig = conectados[i].GetFigure();
                 
                 //transitividad buena
-                if(figure != null) 
+                if(fig != null)
+                {
+                    Debug.Log("PonganleCondon");
+                    print(" levelfig: " + fig.GetLevel());
                     globalStates[(int)fig.GetRecurseType()] += fig.GetLevel();
+                }
 
 
                 List<int> negMods;
@@ -59,7 +66,8 @@ public class Nodo : MonoBehaviour
                 //transitividad negativa
                 for (int j = 0; j < negMods.Count; j++)
                 {
-                    globalStates[j] = -negativesModifiers[j];
+                    globalStates[j] += -negativesModifiers[j];
+                    Debug.Log("SeVino");
                 }
             }
         }
@@ -123,5 +131,6 @@ public class Nodo : MonoBehaviour
             globalStates.Add(0);
             negativesModifiers.Add(0);
         }
+        nodosManager = GetComponentInParent<NodosManager>();
     }
 }

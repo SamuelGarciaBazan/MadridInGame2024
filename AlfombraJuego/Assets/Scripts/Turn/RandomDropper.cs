@@ -63,7 +63,7 @@ public class RandomDropper : MonoBehaviour
         return getFiguresSet(transforms.Count);
     }
 
-    public void generateFigures()
+    public List<FigureDropData> generateFigures()
     {
         List<FigureDropData> listaFiguras = getFiguresSet(transforms.Count);
         for (int i = 0; i < listaFiguras.Count; i++)
@@ -71,6 +71,7 @@ public class RandomDropper : MonoBehaviour
             GameObject aux = Instantiate(firgurePrefabs[Math.Clamp((int)listaFiguras[i].type, 0, 3)], transforms[i]);
             aux.GetComponent<Figure>().setFigure(listaFiguras[i]);
         }
+        return listaFiguras;
     }
 
     private void Start()

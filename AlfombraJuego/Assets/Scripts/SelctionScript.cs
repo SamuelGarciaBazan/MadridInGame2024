@@ -89,6 +89,8 @@ public class SelctionScript : MonoBehaviour
             Debug.Log("Nodo 2 " + n2.name);
             state = 0;
             nodeManager.ponArista(n1, n2);
+            n1.updateGlobalStates();
+            n2.updateGlobalStates();
         }
 
     }
