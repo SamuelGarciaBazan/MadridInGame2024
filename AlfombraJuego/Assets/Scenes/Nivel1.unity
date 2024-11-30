@@ -5101,7 +5101,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.1, z: 1}
-  m_Center: {x: 8.55, y: -0.63, z: 0}
+  m_Center: {x: 8.55, y: -0.53, z: 0}
 --- !u!114 &2142702817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5649916906154856622, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
