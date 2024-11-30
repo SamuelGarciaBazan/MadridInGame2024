@@ -41,7 +41,7 @@ public class Figure : MonoBehaviour
     
     public void advanceTurn(int nturns = 1)
     {
-        waitingTurn -= nturns;
+        waitingTurns -= nturns;
     }
 
     public RecurseType GetRecurseType() { 
