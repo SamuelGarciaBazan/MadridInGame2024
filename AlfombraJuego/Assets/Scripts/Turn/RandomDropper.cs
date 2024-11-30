@@ -43,9 +43,9 @@ public class RandomDropper : MonoBehaviour
                 continue;
             }
 
-            data.level = random.Next(1,3);//devuelve 1 o 2
+            data.level = random.Next(0,2);//devuelve 1 o 2
 
-            if (data.level == 2) {
+            if (data.level == 1) {
                 data.waitingTurns = 1;
             }
             else {
