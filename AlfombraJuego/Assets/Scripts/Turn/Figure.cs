@@ -25,6 +25,12 @@ public class Figure : MonoBehaviour
         return type; 
     }
 
+
+    public void setFigure(RandomDropper.FigureDropData data)
+    {
+        level = data.level;
+    }
+
     public int GetLevel()
     {
         return level;

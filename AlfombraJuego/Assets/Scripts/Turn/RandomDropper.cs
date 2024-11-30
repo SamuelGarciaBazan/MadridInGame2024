@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using static Figure;
 
-public class RandomDropper : MonoBehaviour
+public class RandomDropper : MonoBehaviour  
 {
     public class FigureDropData
     {
@@ -15,7 +16,11 @@ public class RandomDropper : MonoBehaviour
     static System.Random random = new System.Random();
 
     //parametros publicos para editar las probabilidades
+    [SerializeField]
+    List<Transform> transforms = new List<Transform>();
 
+    [SerializeField]
+    List<GameObject> firgurePrefabs = new List<GameObject>();
 
     //devuelve un set de figuras para elegir en esta ronda
     public List<FigureDropData> getFiguresSet(int nDrops)
@@ -53,4 +58,14 @@ public class RandomDropper : MonoBehaviour
         return figureDropDatas;
     }
 
+
+    private void Start()
+    {
+        List<FigureDropData> listaFiguras = getFiguresSet(transforms.Count);
+        for(int i = 0; i<listaFiguras.Count;i++)
+        {
+            GameObject aux =Instantiate(firgurePrefabs[Math.Clamp((int)listaFiguras[i].type,0,3)], transforms[i]);
+            aux.GetComponent<Figure>().setFigure(listaFiguras[i]);
+        }
+    }
 }

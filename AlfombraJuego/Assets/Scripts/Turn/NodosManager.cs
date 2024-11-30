@@ -2,6 +2,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+/*
+ * 
+ * 
+ * Emplear como objeto padre de un grupo de nodos. El indice de los nodos se vera determinado por su orden en la jerarquia
+ *
+ *
+ */
 public class NodosManager : MonoBehaviour
 {
 
@@ -11,6 +19,7 @@ public class NodosManager : MonoBehaviour
 
     //lista de aristas, lista de nodos,y cada nodo tiene una lista de adyacentes (pos en nodes)
     List<List<int>> adyacentes = new List<List<int>>();
+
 
     public List<Nodo> GetNodes()
     {
@@ -47,6 +56,9 @@ public class NodosManager : MonoBehaviour
 
         //dfs
         dfs(v, visit);
+
+
+        //mamon contruye el array en el dfs
 
         //devolver los visitados
         List<Nodo> resp = new List<Nodo>(); 
@@ -89,9 +101,13 @@ public class NodosManager : MonoBehaviour
 
     private void Start()
     {
+        //captura los nodos de los hijos (su orden se ve determinado por el orden de la jerarquia)
+        nodes.AddRange(GetComponentsInChildren<Nodo>());
+        
         //inicializar la lista de adyacentes con listas vacías
         for (int i = 0; i < nodes.Count; i++)
             adyacentes.Add(new List<int>());
+
     }
 
 }
