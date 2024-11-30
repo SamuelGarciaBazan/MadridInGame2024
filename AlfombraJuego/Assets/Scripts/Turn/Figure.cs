@@ -32,6 +32,7 @@ public class Figure : MonoBehaviour
 
     bool asigned = false;
 
+    [SerializeField]
     int waitingTurns = 0;
 
     public int getWaitingTurns()
@@ -58,6 +59,7 @@ public class Figure : MonoBehaviour
     public void setFigure(RandomDropper.FigureDropData data)
     {
         level = data.level;
+        waitingTurns = data.waitingTurns;
     }
 
     public int GetLevel()

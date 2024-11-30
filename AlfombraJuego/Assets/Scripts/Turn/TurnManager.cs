@@ -65,6 +65,16 @@ public class TurnManager : MonoBehaviour
         currFiguresSet =  randomDropper.generateFigures();
     }
 
+    private void debugFigureSet()
+    {
+        for (int i = 0; i < currFiguresSet.Count; i++)
+        {
+            print("Random droper "+ i +
+                " Type " + currFiguresSet[i].type + " Level "
+                +currFiguresSet[i].level + " WaitingTurns " + currFiguresSet[i].waitingTurns);
+
+        }
+    }
     private void debugNextTurn()
     {
         print("Enter in next turn");
@@ -77,13 +87,7 @@ public class TurnManager : MonoBehaviour
             currEventData.targetNodeIndex);
 
 
-        for (int i = 0; i < currFiguresSet.Count; i++)
-        {
-            print("Random droper "+ i + 
-                " Type " + currFiguresSet[i].type + " Level " 
-                +currFiguresSet[i].level + " WaitingTurns " + currFiguresSet[i].waitingTurns);
-
-        }
+       debugFigureSet();
        
 
         if (currFixedEvents == null)
@@ -164,10 +168,17 @@ public class TurnManager : MonoBehaviour
 
         for (int i = 0; i < mano.transform.childCount; i++) {
 
-            Figure fig = mano.transform.GetChild(i).GetComponent<Figure>();
-            if (fig != null) { 
-                fig.advanceTurn();
+            if(mano.transform.GetChild(i).childCount > 0)
+            {
+                Figure fig = mano.transform.GetChild(i).GetChild(0).GetComponent<Figure>();
+                if (fig != null)
+                {
+                    fig.advanceTurn();
+                    print("se avanza turno");
+                }
             }
+
+           
         }
 
         initializeTurn();
@@ -194,6 +205,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         initializeTurn();
+        debugFigureSet();
     }
 
 }
