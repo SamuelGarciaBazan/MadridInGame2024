@@ -134,11 +134,11 @@ public class RandomDropper : MonoBehaviour
         deleteFigures();
 
 
-        print("1");
+        //print("1");
         // Generamos una nueva lista de figuras
         List<FigureDropData> listaFiguras = getFiguresSet(currRound,nFigures);
 
-        print(listaFiguras.Count);
+        //print(listaFiguras.Count);
 
 
         // Instanciamos la nueva lista
