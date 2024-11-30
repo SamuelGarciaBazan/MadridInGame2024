@@ -410,6 +410,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1564997805570014037, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1677427ce35e1104eb79f45a864c5ccd, type: 3}
     - target: {fileID: 1898968386752853512, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
       propertyPath: m_Name
       value: NodoUI
@@ -478,6 +482,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4028254061718711768, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1677427ce35e1104eb79f45a864c5ccd, type: 3}
     - target: {fileID: 4299480370186034990, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -562,6 +570,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4990358977694592161, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1677427ce35e1104eb79f45a864c5ccd, type: 3}
     - target: {fileID: 5344692561019011733, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -722,6 +734,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8255222192922048668, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1677427ce35e1104eb79f45a864c5ccd, type: 3}
     - target: {fileID: 8472805609624046028, guid: 4dc0cbe6938a7ae49b49924affb056aa, type: 3}
       propertyPath: m_Sprite
       value: 
