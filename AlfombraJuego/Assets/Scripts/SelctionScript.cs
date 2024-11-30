@@ -48,10 +48,15 @@ public class SelctionScript : MonoBehaviour
                 if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo"))&&
                     hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>()))
                 {
-                    objectReference.position = hit.transform.position+
-                        new Vector3(0,hit.collider.bounds.extents.y,0)
-                        +new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+                    objectReference.position = 
+                        hit.transform.position +
+                        new Vector3(0,hit.collider.bounds.extents.y,0) +
+                        new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+
                     objectReference.GetComponent<Collider>().enabled = false;
+
+                    // Cambiamos el padre de la figura para que ya no dependa del spawner
+                    objectReference.SetParent(hit.collider.transform);
                 }
                 //reposicionar si es necesario
                 else
