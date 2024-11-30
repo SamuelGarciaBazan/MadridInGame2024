@@ -31,7 +31,19 @@ public class Figure : MonoBehaviour
     FigurePlacement placement;
 
     bool asigned = false;
+
+    int waitingTurns = 0;
+
+    public int getWaitingTurns()
+    {
+        return waitingTurns;
+    }
     
+    public void advanceTurn(int nturns = 1)
+    {
+        waitingTurn -= nturns;
+    }
+
     public RecurseType GetRecurseType() { 
         return type; 
     }

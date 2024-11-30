@@ -35,6 +35,9 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     NodosManager nodosManager;
 
+    [SerializeField]
+    Mano mano;
+
     public int getNodosCount()
     {
         return nodosManager.GetNodes().Count;
@@ -157,6 +160,16 @@ public class TurnManager : MonoBehaviour
     public void nextTurn()
     {
         currentRound++;
+
+
+        for (int i = 0; i < mano.transform.childCount; i++) {
+
+            Figure fig = mano.transform.GetChild(i).GetComponent<Figure>();
+            if (fig != null) { 
+                fig.advanceTurn();
+            }
+        }
+
         initializeTurn();
         getInput();       
         debugNextTurn();
@@ -174,6 +187,8 @@ public class TurnManager : MonoBehaviour
         nodosManager.uptateAllNodesStats();
 
         checkWinDefeatConditions();
+
+
 
     }
     void Start()
