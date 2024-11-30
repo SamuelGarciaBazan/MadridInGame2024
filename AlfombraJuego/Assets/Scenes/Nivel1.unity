@@ -2724,25 +2724,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1733518875561307766, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1428736586}
-    - target: {fileID: 1733518875561307766, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: nextTurn
-      objectReference: {fileID: 0}
     - target: {fileID: 4524057932803909705, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: m_Name
       value: GameplayUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7953594464964294247, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1428736586}
-    - target: {fileID: 7953594464964294247, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FinishLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5101,7 +5085,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.1, z: 1}
-  m_Center: {x: 8.55, y: -0.63, z: 0}
+  m_Center: {x: 8.55, y: -0.53, z: 0}
 --- !u!114 &2142702817 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5649916906154856622, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
