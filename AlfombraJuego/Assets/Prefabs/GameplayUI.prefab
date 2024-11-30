@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ae17646e2fc1e45af9e25508fb6c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acciones: {fileID: 7058488719091790242}
+  turno: {fileID: 5875119489878198665}
 --- !u!1 &6714423294908347992
 GameObject:
   m_ObjectHideFlags: 0
