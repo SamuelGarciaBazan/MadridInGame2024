@@ -6754,113 +6754,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.cantidadesUniform
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.typeChancesUniform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.nodesChancesUniform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.cantidades.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.typeChances.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.nodesChances.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.cantidades.Array.data[0]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.cantidades.Array.data[1]'
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.cantidades.Array.data[2]'
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.cantidadesChancesUniform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.typeChances.Array.data[0]'
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.nodesChances.Array.data[0]'
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.nodesChances.Array.data[1]'
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.nodesChances.Array.data[2]'
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.nodesChances.Array.data[3]'
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.nodesChances.Array.data[4]'
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: config.cantidadesChances.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.cantidadesChances.Array.data[0]'
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.cantidadesChances.Array.data[1]'
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1203891185359973871, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: 'config.cantidadesChances.Array.data[2]'
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: fixedEventsList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: fixedEventsList.Array.data[0].roundTime
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[0].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[0].cantidad
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
-      propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[0].targetNodeIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3624481323716416783, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: m_Name
       value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877779822593757292, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: nFigures
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3877779822593757292, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: 'transforms.Array.data[0]'
@@ -6882,6 +6782,18 @@ PrefabInstance:
       propertyPath: 'transforms.Array.data[4]'
       value: 
       objectReference: {fileID: 1585924763}
+    - target: {fileID: 3877779822593757292, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: config.roundsWithRoad.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877779822593757292, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.roundsWithRoad.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877779822593757292, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: 'config.roundsWithRoad.Array.data[1]'
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: mano
       value: 

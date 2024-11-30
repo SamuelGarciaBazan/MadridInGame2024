@@ -61,7 +61,7 @@ public class TurnManager : MonoBehaviour
     void initializeTurn()
     {
         currentPoints = actionsPoints;
-        currFiguresSet =  randomDropper.generateFigures();
+        currFiguresSet =  randomDropper.generateFigures(currentRound);
     }
 
     private void debugFigureSet()

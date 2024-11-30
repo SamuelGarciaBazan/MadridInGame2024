@@ -16,14 +16,20 @@ public class RandomEvents : MonoBehaviour
     [System.Serializable]
     public class RandomEventConfig
     {
+        //las probabilidades se aplican sobre 100, si no suman 100, no se aplicara evento siempre
+
+        //probabiliad para cada tipo
         public List<int> typeChances = new List<int>((int)Figure.RecurseType.END_ENUM);
 
+        //deben ser mayores que 1
         public List<int> cantidades = new List<int>();
         public List<int> cantidadesChances = new List<int>();
 
 
         public List<int> nodesChances = new List<int>();
 
+
+        //si los booleanos estan activados, las correspondientes listas se ignoran
         public bool typeChancesUniform = false;
 
         public int cantidadesUniform = 0;
