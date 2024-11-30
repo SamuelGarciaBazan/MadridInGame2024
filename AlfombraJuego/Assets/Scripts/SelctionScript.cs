@@ -18,24 +18,35 @@ public class SelctionScript : MonoBehaviour
     {
         Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (context.performed&& Physics.Raycast(camray, out hit, 500, LayerMask.GetMask("Drageable")))
+        //click
+        if (context.performed&& Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable")))
         {
             preDragPosition = hit.transform.position;
             objectReference = hit.transform;
             reference.gameObject.SetActive(true);
+            objectReference.GetComponent<Rigidbody>().isKinematic = true;
             Debug.Log("TuViejaPick");
         }
+        //release
         else if (context.canceled&&objectReference!=null)
         {
-            if(Physics.Raycast(camray, out hit, 500, LayerMask.GetMask("Nodo")))
+            //comprobar que se puede colorcar en la peana
+            if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo"))&&
+                hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>()))
             {
+
+
+
                 objectReference.position = hit.transform.position+
                     new Vector3(0,hit.collider.bounds.extents.y,0)
                     +new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+                objectReference.GetComponent<Collider>().enabled = false;
             }
+            //reposicionar si es necesario
             else
             {
-                objectReference.position = preDragPosition;
+                objectReference.position = preDragPosition+new Vector3(0,heith,0);
+                objectReference.GetComponent<Rigidbody>().isKinematic = false;
             }
             objectReference = null;
             Debug.Log("TuViejaDrop");
@@ -56,7 +67,7 @@ public class SelctionScript : MonoBehaviour
     {
         Ray camray =Camera.main.ScreenPointToRay(Input.mousePosition); 
         RaycastHit hit;
-        if (Physics.Raycast(camray, out hit, 500, LayerMask.GetMask("Floor","Drageable")))
+        if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Floor")))
         {
             reference.position = hit.point;
             if(objectReference != null)
