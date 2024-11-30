@@ -82,6 +82,13 @@ public class Figure : MonoBehaviour
     }
 
     private void SetVisualBasedOnLevel() {
+
+        if(visuals == null)
+        {
+            print("No hay referencia a contenedor de visuales ");
+            return;
+        }
+
         for(int i = 0; i < visuals.childCount; i++) {
             if (i == level) visuals.GetChild(i).gameObject.SetActive(true);
             else visuals.GetChild(i).gameObject.SetActive(false);

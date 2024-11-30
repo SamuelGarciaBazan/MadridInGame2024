@@ -48,12 +48,18 @@ public class RandomEvents : MonoBehaviour
     {
         RecurseEventData data = new RecurseEventData();
 
+        //print("1");
+
         if (config.typeChancesUniform)
         {
+            //print("2");
+
             data.type = (Figure.RecurseType)random.Next(0, (int)Figure.RecurseType.END_ENUM);
         }
         else
         {
+            //print("3");
+
             int rnd = random.Next(1, 101);
 
             data.type = Figure.RecurseType.END_ENUM;
@@ -63,6 +69,7 @@ public class RandomEvents : MonoBehaviour
                 if (rnd <= config.typeChances[i])
                 {
                     data.type = (Figure.RecurseType)i;
+                    //print("i: " + i);
                     break;
                 }
                 else rnd -= config.typeChances[i];
