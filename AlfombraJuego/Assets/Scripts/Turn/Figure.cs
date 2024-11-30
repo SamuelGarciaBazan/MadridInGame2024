@@ -35,7 +35,20 @@ public class Figure : MonoBehaviour
     FigurePlacement placement;
 
     bool asigned = false;
+
+    [SerializeField]
+    int waitingTurns = 0;
+
+    public int getWaitingTurns()
+    {
+        return waitingTurns;
+    }
     
+    public void advanceTurn(int nturns = 1)
+    {
+        waitingTurns -= nturns;
+    }
+
     public RecurseType GetRecurseType() { 
         return type; 
     }
@@ -50,6 +63,7 @@ public class Figure : MonoBehaviour
     public void setFigure(RandomDropper.FigureDropData data)
     {
         level = data.level;
+        waitingTurns = data.waitingTurns;
     }
 
     public int GetLevel()

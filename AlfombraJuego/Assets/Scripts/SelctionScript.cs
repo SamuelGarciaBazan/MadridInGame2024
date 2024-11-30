@@ -51,6 +51,7 @@ public class SelctionScript : MonoBehaviour
                 if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
                     objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
                     turnManager.getCurrentPoints() >= 2 &&  // Si tenemos puntos para pasarlo de un tren a un nodo
+                    objectReference.GetComponent<Figure>().getWaitingTurns() <= 0   && //ver si la figure no tiene que esperar
                     hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())) // Si se puede colocar en el nodo
                     {
                     turnManager.spendPoints(2);
@@ -70,8 +71,10 @@ public class SelctionScript : MonoBehaviour
                 // CASO 2 : DE LA MANO A UN NODO
                 else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
                     objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.MANO &&   // Si viene de la mano
-                    turnManager.getCurrentPoints() >= 1 &&  // Si tenemos puntos para pasarlo de la mano a un nodo
-                    hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())) // Si se puede colocar en el nodo
+                    turnManager.getCurrentPoints() >= 1 && // Si tenemos puntos para pasarlo de la mano a un nodo 
+                      objectReference.GetComponent<Figure>().getWaitingTurns() <= 0   && //ver si la figure no tiene que esperar
+                    hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())// Si se puede colocar en el nodo IMPORTANTE: ESTE VA ULTIMO!!!!
+                    ) 
                     {
                     turnManager.spendPoints(1);
                     objectReference.position =

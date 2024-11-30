@@ -11,11 +11,10 @@ public class TurnManager : MonoBehaviour
 
     private int currentPoints;
 
-    private int currentRound = 0;
+    public int CurrentActions {  get { return currentPoints; } }
 
-    [SerializeField]
-    private int nFigures = 0; //se usa para ver cuantos te dan por partida
-
+    private int currentRound = 1;
+    public int CurrentRound {  get { return currentRound; } }
     
     RecurseEventData currEventData;
 
@@ -34,6 +33,9 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField]
     NodosManager nodosManager;
+
+    [SerializeField]
+    Mano mano;
 
     public int getNodosCount()
     {
@@ -62,6 +64,16 @@ public class TurnManager : MonoBehaviour
         currFiguresSet =  randomDropper.generateFigures();
     }
 
+    private void debugFigureSet()
+    {
+        for (int i = 0; i < currFiguresSet.Count; i++)
+        {
+            print("Random droper "+ i +
+                " Type " + currFiguresSet[i].type + " Level "
+                +currFiguresSet[i].level + " WaitingTurns " + currFiguresSet[i].waitingTurns);
+
+        }
+    }
     private void debugNextTurn()
     {
         print("Enter in next turn");
@@ -74,13 +86,7 @@ public class TurnManager : MonoBehaviour
             currEventData.targetNodeIndex);
 
 
-        for (int i = 0; i < currFiguresSet.Count; i++)
-        {
-            print("Random droper "+ i + 
-                " Type " + currFiguresSet[i].type + " Level " 
-                +currFiguresSet[i].level + " WaitingTurns " + currFiguresSet[i].waitingTurns);
-
-        }
+       debugFigureSet();
        
 
         if (currFixedEvents == null)
@@ -157,6 +163,23 @@ public class TurnManager : MonoBehaviour
     public void nextTurn()
     {
         currentRound++;
+
+
+        for (int i = 0; i < mano.transform.childCount; i++) {
+
+            if(mano.transform.GetChild(i).childCount > 0)
+            {
+                Figure fig = mano.transform.GetChild(i).GetChild(0).GetComponent<Figure>();
+                if (fig != null)
+                {
+                    fig.advanceTurn();
+                    print("se avanza turno"); 
+                }
+            }
+
+           
+        }
+
         initializeTurn();
         getInput();       
         debugNextTurn();
@@ -175,10 +198,13 @@ public class TurnManager : MonoBehaviour
 
         checkWinDefeatConditions();
 
+
+
     }
     void Start()
     {
         initializeTurn();
+        debugFigureSet();
     }
 
 }

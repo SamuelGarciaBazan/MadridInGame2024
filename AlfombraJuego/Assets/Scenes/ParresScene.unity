@@ -3894,6 +3894,7 @@ MonoBehaviour:
   randomEvents: {fileID: 1428736587}
   fixedEvents: {fileID: 1428736588}
   nodosManager: {fileID: 193032340}
+  mano: {fileID: 2142702817}
 --- !u!114 &1428736587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6079,6 +6080,17 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &2142702817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5649916906154856622, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+  m_PrefabInstance: {fileID: 4849365470451078112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392021be510b9a0419fe8302bb29409c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &336172163984817478
 PrefabInstance:
   m_ObjectHideFlags: 0
