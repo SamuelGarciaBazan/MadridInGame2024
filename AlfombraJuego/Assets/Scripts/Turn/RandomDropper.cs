@@ -58,7 +58,7 @@ public class RandomDropper : MonoBehaviour
 
         for(int i = 0; i < config.roundsWithRoad.Count; i++)
         {
-            if(currRound == i)
+            if(currRound == config.roundsWithRoad[i])
             {
                 road = true;
                 break;
@@ -70,9 +70,13 @@ public class RandomDropper : MonoBehaviour
         {
             FigureDropData data = new FigureDropData();
 
+            //de momento no hay esperas
+            data.waitingTurns = 0;
+
+
 
             //añadir la carretera si toca
-            if(road && i == 0)
+            if (road && i == 0)
             {
                 data.type = Figure.RecurseType.END_ENUM;
 
@@ -81,25 +85,36 @@ public class RandomDropper : MonoBehaviour
                 continue;
             }
 
+            //si no hay carretera, calculamos de forma aleatoria
 
+            int rnd = random.Next(1, 101);
 
-            data.type = (Figure.RecurseType)random.Next(0,(int)Figure.RecurseType.END_ENUM);
+            //elegir el tipo del objeto de forma aleatoria
+            data.type = Figure.RecurseType.END_ENUM;
 
-            if (data.type == Figure.RecurseType.END_ENUM)
+            for (int j = 0; j < config.typeChances.Count; j++)
             {
-                figureDropDatas.Add(data);
-
-                continue;
+                if (rnd <= config.typeChances[j])
+                {
+                    data.type = (RecurseType)j;
+                    break;
+                }
+                else rnd -= config.typeChances[j];
             }
 
-            data.level = random.Next(0,2);//devuelve 1 o 2
+            rnd = random.Next(1, 101);
 
-            if (data.level == 1) {
-                data.waitingTurns = 1;
+            for(int j = 0; j < config.levelsChances.Count; j++)
+            {
+                if (rnd <= config.levelsChances[j])
+                {
+                    data.level = config.levels[j];
+                    break;
+                }
+                else rnd -= config.levelsChances[j];
             }
-            else {
-                data.waitingTurns = 0;
-            }
+
+           
             figureDropDatas.Add(data);
 
         }
