@@ -30,6 +30,7 @@ public class SelctionScript : MonoBehaviour
         RaycastHit hit;
         if(state == 0)
         {
+            
             //click
             if (context.performed&& Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable")))
             {
@@ -38,15 +39,25 @@ public class SelctionScript : MonoBehaviour
                 reference.gameObject.SetActive(true);
                 objectReference.GetComponent<Rigidbody>().isKinematic = true;
                 //Debug.Log("TuViejaPick");
+
+                int nNodes = nodeManager.transform.childCount;
+                for (int i = 0; i < nNodes; i++) {
+                    nodeManager.transform.GetChild(i).GetComponent<Outline>().enabled = true;
+                }
+                
             }
             //release
-
 
             ///TODO:
             ///comprobar que la jugada puede ser valida segun la economía de acciones
             ///detectar que se ha cogido una ficha y se ha guardado en la reserva
             else if (context.canceled&&objectReference!=null)
             {
+                int nNodes = nodeManager.transform.childCount;
+                for (int i = 0; i < nNodes; i++) {
+                    nodeManager.transform.GetChild(i).GetComponent<Outline>().enabled = false;
+                }
+
                 // CASO 1 : DEL TREN A UN NODO
                 if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
                     objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
