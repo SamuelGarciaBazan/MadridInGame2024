@@ -13,11 +13,22 @@ public class Figure : MonoBehaviour
         END_ENUM
     }
 
+    public enum FigurePlacement 
+    {
+        TREN,
+        MANO,
+        NODO
+    }
+
     [SerializeField]
     int level = 1;
 
     [SerializeField]
     RecurseType type;
+
+
+    [SerializeField]
+    FigurePlacement placement;
 
     bool asigned = false;
     
@@ -25,7 +36,13 @@ public class Figure : MonoBehaviour
         return type; 
     }
 
+    public FigurePlacement GetFigurePlacement() {
+        return placement;
+    }
 
+    public void SetFigurePlacement(FigurePlacement p) {
+        placement = p;
+    }
     public void setFigure(RandomDropper.FigureDropData data)
     {
         level = data.level;
