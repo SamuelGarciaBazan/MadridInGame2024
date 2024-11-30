@@ -28,6 +28,11 @@ public class SelctionScript : MonoBehaviour
             Debug.Log("TuViejaPick");
         }
         //release
+
+
+        ///TODO:
+        ///comprobar que la jugada puede ser valida segun la economía de acciones
+        ///detectar que se ha cogido una ficha y se ha guardado en la reserva
         else if (context.canceled&&objectReference!=null)
         {
             //comprobar que se suelta en una peana y que se puede dejar
