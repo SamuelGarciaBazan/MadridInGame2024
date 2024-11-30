@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
+
 public class Nodo : MonoBehaviour
 {
 
@@ -30,11 +31,20 @@ public class Nodo : MonoBehaviour
         //Debug.Log("TusMuertoPisao");
         //print(" levelfigure: " + figure.GetLevel());
 
+        NodosManager.TransitivityMode tMode = nodosManager.GetTransitivityMode();
 
         for (int i = 0; i < globalStates.Count; i++)
         {
-            //globalStates[i] = -negativesModifiers[i];
-            globalStates[i] = 0;
+            if(tMode == NodosManager.TransitivityMode.ONLY_GOOD)
+            {
+                //aplicar solo sus modificadores negativos,setear a ese valor
+                globalStates[i] = -negativesModifiers[i];
+            }
+            else if(tMode == NodosManager.TransitivityMode.GOOD_AND_BAD)
+            {
+                //resetear a 0
+                globalStates[i] = 0;
+            }
         }
 
         //version solo mirar el propio nodo
@@ -60,6 +70,9 @@ public class Nodo : MonoBehaviour
                 {
                     //Debug.Log("PonganleCondon");
                     //print(" levelfig: " + fig.GetLevel());
+
+
+                    //añadir el beneficio del edificio del otro nodo
                     globalStates[(int)fig.GetRecurseType()] += fig.GetLevel();
                 }
 
@@ -71,7 +84,19 @@ public class Nodo : MonoBehaviour
                 //transitividad negativa
                 for (int j = 0; j < negMods.Count; j++)
                 {
-                    globalStates[j] += -negMods[j];
+
+                    if (tMode == NodosManager.TransitivityMode.ONLY_GOOD)
+                    {
+                        //si no hay transitividad negativa, no sumo nada
+
+
+                    }
+                    else if (tMode == NodosManager.TransitivityMode.GOOD_AND_BAD)
+                    {
+
+                        //si hay transitividad negativa, sumar los modificadores negativos del otro nodo
+                        globalStates[j] += -negMods[j];
+                    }
                     //Debug.Log("SeVino");
                 }
             }

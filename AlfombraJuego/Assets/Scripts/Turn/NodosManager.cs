@@ -13,6 +13,11 @@ using UnityEngine;
 public class NodosManager : MonoBehaviour
 {
 
+    public enum TransitivityMode
+    {
+        ONLY_GOOD,GOOD_AND_BAD
+    }
+
     //lista de todos los nodos,vertices
     [SerializeField]
     private List<Nodo> nodes = new List<Nodo>();
@@ -20,6 +25,11 @@ public class NodosManager : MonoBehaviour
     //lista de aristas, lista de nodos,y cada nodo tiene una lista de adyacentes (pos en nodes)
     List<List<int>> adyacentes = new List<List<int>>();
 
+
+    [SerializeField]
+    TransitivityMode transitivityMode = TransitivityMode.ONLY_GOOD;
+
+    public TransitivityMode GetTransitivityMode() { return transitivityMode; }
 
     public List<Nodo> GetNodes()
     {
