@@ -32,8 +32,6 @@ public class Nodo : MonoBehaviour
         }
         else if (figure.GetRecurseType() != fig.GetRecurseType()) //tipos distintos no hacer nada
         {
-
-
             return false;
         }
         else { //tipos iguales,actualizar modelo y sumar nivel

@@ -7,11 +7,13 @@ public class RandomDropper : MonoBehaviour
 {
     public struct FigureDropData
     {
-        Figure.RecurseType type;
-        int level;
-        int waitingTurns;
+        public Figure.RecurseType type;
+        public int level;
+        public int waitingTurns;
     }
 
+
+    static System.Random random = new System.Random();
     //parametros publicos para editar las probabilidades
 
 
@@ -23,7 +25,20 @@ public class RandomDropper : MonoBehaviour
         //rellenar la lista
         for (int i = 0; i < nDrops; i++)
         {
+            FigureDropData data = new FigureDropData();
 
+            data.type = (Figure.RecurseType)random.Next(0,(int)Figure.RecurseType.END_ENUM+1);
+
+            if (data.type == Figure.RecurseType.END_ENUM) continue;
+
+            data.level = random.Next(1,3);//devuelve 1 o 2
+
+            if (data.level == 2) {
+                data.waitingTurns = 1;
+            }
+            else {
+                data.waitingTurns = 0;
+            }
         }
 
 
