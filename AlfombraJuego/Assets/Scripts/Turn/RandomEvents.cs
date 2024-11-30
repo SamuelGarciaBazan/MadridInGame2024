@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomEvents : MonoBehaviour
 {
     [System.Serializable]
-    public struct RecurseEventData
+    public class RecurseEventData
     {
         public Figure.RecurseType type;
         public int cantidad;

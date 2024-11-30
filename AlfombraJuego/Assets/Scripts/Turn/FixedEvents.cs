@@ -7,7 +7,7 @@ public class FixedEvents : MonoBehaviour
     static System.Random random = new System.Random();
 
     [System.Serializable]
-    public struct FixedEventInfo
+    public class FixedEventInfo
     {
         public int roundTime;
         public List<RecurseEventData> fixedEvents;

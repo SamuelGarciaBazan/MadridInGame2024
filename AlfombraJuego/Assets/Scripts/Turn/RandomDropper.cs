@@ -5,7 +5,7 @@ using static Figure;
 
 public class RandomDropper : MonoBehaviour
 {
-    public struct FigureDropData
+    public class FigureDropData
     {
         public Figure.RecurseType type;
         public int level;

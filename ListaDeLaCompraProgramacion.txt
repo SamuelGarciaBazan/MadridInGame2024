@@ -1,0 +1,11 @@
+-Hacer mas parametrizables los randoms -> (scriptable objects?)
+-Sistema de transitividad según carreteras -> grafo?
+	-Generar un grafo, nodo, listas de adyacentes
+	-Transitividad positiva: sumar los edificios de otros nodos
+	-Transitividad negativa: restar desventajas de otros nodos
+	
+
+
+-Cambio de mallas al upgradear
+-Enlazar lógica con visual en el bucle de juego
+-Transiciones ?

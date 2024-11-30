@@ -148,6 +148,11 @@ public class TurnManager : MonoBehaviour
         }
     }
 
+    void checkWinDefeatConditions()
+    {
+
+    }
+
     public void nextTurn()
     {
         currentRound++;
@@ -165,14 +170,12 @@ public class TurnManager : MonoBehaviour
         applyLogicCurrFixedEvents();
 
 
+        checkWinDefeatConditions();
+
     }
     void Start()
     {
         initializeTurn();
     }
 
-    void Update()
-    {
-        
-    }
 }
