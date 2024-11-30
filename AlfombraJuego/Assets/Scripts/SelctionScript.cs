@@ -30,13 +30,10 @@ public class SelctionScript : MonoBehaviour
         //release
         else if (context.canceled&&objectReference!=null)
         {
-            //comprobar que se puede colorcar en la peana
+            //comprobar que se suelta en una peana y que se puede dejar
             if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo"))&&
                 hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>()))
             {
-
-
-
                 objectReference.position = hit.transform.position+
                     new Vector3(0,hit.collider.bounds.extents.y,0)
                     +new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
@@ -74,7 +71,6 @@ public class SelctionScript : MonoBehaviour
             {
                 objectReference.transform.position = new Vector3(0, heith, 0) + hit.point;
             }
-            Debug.Log("tuvieja "+hit.transform.name);
         }
     }
 }
