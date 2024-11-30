@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3215360927367849503}
   - component: {fileID: 7973963218370732726}
   - component: {fileID: 2390798463538146699}
+  - component: {fileID: 4184397044255450194}
   m_Layer: 8
   m_Name: Nodo
   m_TagString: Untagged
@@ -31,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.65, y: -0.13, z: 2.08}
-  m_LocalScale: {x: 6.5456, y: 0.6421234, z: 6.5456}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 4, y: 0.001, z: 4}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3946483472758702234}
   m_Father: {fileID: 0}
@@ -143,6 +144,24 @@ MonoBehaviour:
   - {fileID: 937270314669719355}
   - {fileID: 6083534562509107756}
   - {fileID: 5189625297209784314}
+--- !u!114 &4184397044255450194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556730440136554792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.9198003, g: 1, b: 0, a: 0.19607843}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2645602768231869859
 PrefabInstance:
   m_ObjectHideFlags: 0
