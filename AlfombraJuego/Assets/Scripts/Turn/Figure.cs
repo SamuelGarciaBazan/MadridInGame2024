@@ -25,6 +25,11 @@ public class Figure : MonoBehaviour
         return type; 
     }
 
+    public int GetLevel()
+    {
+        return level;
+    }
+
 
 
 }

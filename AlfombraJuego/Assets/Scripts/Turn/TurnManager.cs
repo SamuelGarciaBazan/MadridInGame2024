@@ -14,7 +14,7 @@ public class TurnManager : MonoBehaviour
     private int currentRound = 0;
 
     [SerializeField]
-    private int nFigures = 0;
+    private int nFigures = 0; //se usa para ver cuantos te dan por partida
 
     
     RecurseEventData currEventData;
@@ -45,15 +45,20 @@ public class TurnManager : MonoBehaviour
         return currentPoints;
     }
 
-    public void spendPoints(int n = 1) {
-    
-    
+    //devuelve true si se ha podido gastar
+    public bool spendPoints(int n = 1) {
+        
+        if(n <= currentPoints)
+        {
+            currentPoints -= n;
+            return true;
+        }
+        return false;
     }
 
     void initializeTurn()
     {
         currentPoints = actionsPoints;
-
     }
 
     private void debugNextTurn()
@@ -101,12 +106,64 @@ public class TurnManager : MonoBehaviour
         currFiguresSet = randomDropper.getFiguresSet(nFigures);
         currFixedEvents = fixedEvents.getFixedEvents(currentRound);
     }
+
+
+    void applyRecurseEventData(RecurseEventData data)
+    {
+        nodosManager.GetNodes()[data.targetNodeIndex].addNegativeEffect(
+            data.type, data.cantidad);
+    }
+
+
+    void applyVisualCurrEvent()
+    {
+
+    }
+
+    void applyLogicCurrEvent()
+    {
+       applyRecurseEventData(currEventData);  
+    }
+
+    void applyVisualCurrFigures()
+    {
+
+    }
+
+    void applyLogicCurrFigures() 
+    { 
+        //vacio
+    }
+    void applyVisualCurrFixedEvents()
+    {
+
+    }
+    void applyLogicCurrFixedEvents()
+    {
+        if (currFixedEvents == null) return;
+
+        for(int i = 0; i < currFixedEvents.Count; i++)
+        {
+            applyRecurseEventData(currFixedEvents[i]);
+        }
+    }
+
     public void nextTurn()
     {
         currentRound++;
-        getInput();
-        
+        initializeTurn();
+        getInput();       
         debugNextTurn();
+
+        //aplicar los efectos visuales y de logica
+        applyVisualCurrEvent();
+        applyVisualCurrFigures();
+        applyVisualCurrFixedEvents();
+
+        applyLogicCurrEvent();
+        applyLogicCurrFigures();
+        applyLogicCurrFixedEvents();
+
 
     }
     void Start()
