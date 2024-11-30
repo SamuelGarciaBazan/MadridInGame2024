@@ -45,23 +45,24 @@ public class SelctionScript : MonoBehaviour
             else if (context.canceled&&objectReference!=null)
             {
                 //comprobar que se suelta en una peana y que se puede dejar
-                if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo"))&&
-                    hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>()))
-                {
-                    objectReference.position = 
+                if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&
+                    hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())) 
+                    {
+                    objectReference.position =
                         hit.transform.position +
-                        new Vector3(0,hit.collider.bounds.extents.y,0) +
+                        new Vector3(0, hit.collider.bounds.extents.y, 0) +
                         new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
 
                     objectReference.GetComponent<Collider>().enabled = false;
 
-                    // Cambiamos el padre de la figura para que ya no dependa del spawner
+                    // Cambiamos el padre de la figura para que ya no dependa del spawner o de la mano
                     objectReference.SetParent(hit.collider.transform);
+                } else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&
+                      hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform)) {
                 }
-                //reposicionar si es necesario
-                else
-                {
-                    objectReference.position = preDragPosition+new Vector3(0,heith,0);
+                  //reposicionar si es necesario
+                  else {
+                    objectReference.position = preDragPosition + new Vector3(0, heith, 0);
                     objectReference.GetComponent<Rigidbody>().isKinematic = false;
                 }
                 objectReference = null;
