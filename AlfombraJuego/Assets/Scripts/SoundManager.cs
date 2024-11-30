@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
     void PlaySound(string name)
     {
         audioSource.Stop();
-        audioSource.resource = sounds.Find();
+        //audioSource.resource = sounds.Find();
         audioSource.Play();
     }
 
@@ -41,7 +41,7 @@ public class SoundManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PlaySound(0);
+       // PlaySound(0);
     }
 
     // Update is called once per frame
