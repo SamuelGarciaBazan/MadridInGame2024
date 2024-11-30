@@ -18,7 +18,8 @@ public class Figure : MonoBehaviour
     {
         TREN,
         MANO,
-        NODO
+        NODO,
+        CARRETERA
     }
 
     [SerializeField]
