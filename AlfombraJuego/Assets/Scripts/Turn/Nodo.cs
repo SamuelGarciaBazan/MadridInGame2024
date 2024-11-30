@@ -27,9 +27,12 @@ public class Nodo : MonoBehaviour
     {
         Debug.Log("TusMuertoPisao");
         print(" levelfigure: " + figure.GetLevel());
+
+
         for (int i = 0; i < globalStates.Count; i++)
         {
-            globalStates[i] = -negativesModifiers[i];
+            //globalStates[i] = -negativesModifiers[i];
+            globalStates[i] = 0;
         }
 
         //version solo mirar el propio nodo
