@@ -171,7 +171,7 @@ public class TurnManager : MonoBehaviour
                 if (fig != null)
                 {
                     fig.advanceTurn();
-                    print("se avanza turno");
+                    print("se avanza turno"); 
                 }
             }
 
