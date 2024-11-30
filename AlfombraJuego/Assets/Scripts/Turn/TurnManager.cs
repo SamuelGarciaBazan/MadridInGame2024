@@ -115,6 +115,24 @@ public class TurnManager : MonoBehaviour
 
     void applyRecurseEventData(RecurseEventData data)
     {
+        if(data.type == Figure.RecurseType.END_ENUM)
+        {
+            print("tipo de evento invalido");
+            return;
+        }
+        if(data.cantidad == -1)
+        {
+            print("cantidad de evento invalida");
+            return;
+        }
+        if(data.targetNodeIndex == -1)
+        {
+            print("nodo objetivo de evento invalido");
+            return;
+
+        }
+
+
         nodosManager.GetNodes()[data.targetNodeIndex].addNegativeEffect(
             data.type, data.cantidad);
     }
