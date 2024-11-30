@@ -25,8 +25,8 @@ public class Nodo : MonoBehaviour
     //recalcula los estados por si han cambiado
     public void updateGlobalStates()
     {
-        Debug.Log("TusMuertoPisao");
-        print(" levelfigure: " + figure.GetLevel());
+        //Debug.Log("TusMuertoPisao");
+        //print(" levelfigure: " + figure.GetLevel());
 
 
         for (int i = 0; i < globalStates.Count; i++)
@@ -44,7 +44,7 @@ public class Nodo : MonoBehaviour
         //version mirando los adyacentes
         if(nodosManager  != null)
         {
-            Debug.Log("LatuyaPorSiAcaso");
+            //Debug.Log("LatuyaPorSiAcaso");
             List<Nodo> conectados;
 
             conectados = nodosManager.GetConectedNodes(this);
@@ -56,8 +56,8 @@ public class Nodo : MonoBehaviour
                 //transitividad buena
                 if(fig != null)
                 {
-                    Debug.Log("PonganleCondon");
-                    print(" levelfig: " + fig.GetLevel());
+                    //Debug.Log("PonganleCondon");
+                    //print(" levelfig: " + fig.GetLevel());
                     globalStates[(int)fig.GetRecurseType()] += fig.GetLevel();
                 }
 
@@ -70,7 +70,7 @@ public class Nodo : MonoBehaviour
                 for (int j = 0; j < negMods.Count; j++)
                 {
                     globalStates[j] += -negMods[j];
-                    Debug.Log("SeVino");
+                    //Debug.Log("SeVino");
                 }
             }
         }
