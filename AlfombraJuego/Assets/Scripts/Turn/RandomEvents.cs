@@ -101,8 +101,10 @@ public class RandomEvents : MonoBehaviour
                     data.cantidad = config.cantidades[i];
                     break;
                 }
-                else rnd -= config.cantidades[i];
+                else rnd -= config.cantidadesChances[i];
+
             }
+            print(data.cantidad);
         }
 
         if (config.nodesChancesUniform)

@@ -73,7 +73,7 @@ public class Nodo : MonoBehaviour
 
 
                     //añadir el beneficio del edificio del otro nodo
-                    globalStates[(int)fig.GetRecurseType()] += fig.GetLevel();
+                    globalStates[(int)fig.GetRecurseType()] += fig.GetLevel() + 1;
                 }
 
 
