@@ -262,6 +262,7 @@ public class TurnManager : MonoBehaviour
 
     public void nextTurn()
     {
+        print("BOMBA");
         buttonNextTurn.SetActive(false);
         currentRound++;
         animator.SetTrigger("Pipi");
