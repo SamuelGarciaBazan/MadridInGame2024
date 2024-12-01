@@ -26,7 +26,7 @@ public class Figure : MonoBehaviour
     int level = 0;
 
     [SerializeField]
-    int maxLevel = 1;
+    int maxLevel = 2;
 
     [SerializeField]
     RecurseType type;
