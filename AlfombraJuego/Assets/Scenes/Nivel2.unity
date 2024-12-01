@@ -2667,6 +2667,7 @@ MonoBehaviour:
   reference: {fileID: 69980211}
   heith: 3
   turnManager: {fileID: 1428736586}
+  mallaCajaConOutliner: {fileID: 4849365470451078113}
   scaleMultiplier: 3
 --- !u!114 &1219242708
 MonoBehaviour:
@@ -2709,6 +2710,10 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: c268e812-d91d-4a7a-9612-bf56feb39ea7
     m_ActionName: 'Player/Drag[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aab9fd2f-964c-4569-bf29-40df4178cbf4
+    m_ActionName: 'Player/ReturnMenu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -6246,6 +6251,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+--- !u!114 &4849365470451078113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4486853784903925675, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+  m_PrefabInstance: {fileID: 4849365470451078112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6290003699341244266
 PrefabInstance:
   m_ObjectHideFlags: 0
