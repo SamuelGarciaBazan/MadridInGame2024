@@ -235,7 +235,6 @@ public class SelctionScript : MonoBehaviour
     public void drag(InputAction.CallbackContext context)
     {
         Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
         if(state == 0)
         {
             //click

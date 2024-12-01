@@ -5,8 +5,10 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager THIS;
-
+    [SerializeField]
     AudioSource audioSource;
+    [SerializeField]
+    AudioSource musicSource;
 
     
     public AudioClip[] sounds;
@@ -20,7 +22,7 @@ public class SoundManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
-        audioSource = GetComponent<AudioSource>();
+        ///audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
