@@ -90,10 +90,23 @@ public class Figure : MonoBehaviour
             return;
         }
 
-        for(int i = 0; i < visuals.childCount; i++) {
-            if (i == level) visuals.GetChild(i).gameObject.SetActive(true);
-            else visuals.GetChild(i).gameObject.SetActive(false);
+        if(type == RecurseType.OCIO) //no incremental
+        {
+            for (int i = 0; i < visuals.childCount; i++)
+            {
+                if (i == level) visuals.GetChild(i).gameObject.SetActive(true);
+                else visuals.GetChild(i).gameObject.SetActive(false);
+            }
         }
+        else //incremental
+        {
+            for (int i = 0; i < visuals.childCount; i++)
+            {
+                if (i <= level) visuals.GetChild(i).gameObject.SetActive(true);
+                else visuals.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        
     }
 
     private void Start() {
