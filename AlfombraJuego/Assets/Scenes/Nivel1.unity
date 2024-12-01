@@ -6979,6 +6979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManoJugable
       objectReference: {fileID: 0}
+    - target: {fileID: 5649916906154856622, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+      propertyPath: veticalOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7078794747831596773, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.61
