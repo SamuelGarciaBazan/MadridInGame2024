@@ -147,19 +147,20 @@ public class TurnManager : MonoBehaviour
             return;
 
         }
-        SoundManager.THIS.PlaySoundByIndex(0);
-        switch (data.type)
-        {
-            case Figure.RecurseType.SEGURIDAD:
+        SoundManager.THIS.PlaySoundByIndex((int)data.type);
+        //switch (data.type)
+        //{
+        //    case Figure.RecurseType.SEGURIDAD:
                 
-                break;
-            case Figure.RecurseType.OCIO:
-                break;
-            case Figure.RecurseType.ZONAS_VERDES:
-                break;
-            case Figure.RecurseType.SANIDAD:
-                break;
-        }
+        //        SoundManager.THIS.PlaySoundByIndex((int)data.type);
+        //        break;
+        //    case Figure.RecurseType.OCIO:
+        //        break;
+        //    case Figure.RecurseType.ZONAS_VERDES:
+        //        break;
+        //    case Figure.RecurseType.SANIDAD:
+        //        break;
+        //}
 
         nodosManager.GetNodes()[data.targetNodeIndex].addNegativeEffect(
             data.type, data.cantidad);

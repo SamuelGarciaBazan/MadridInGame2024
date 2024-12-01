@@ -1503,6 +1503,9 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: 39e7eb3d63b0b1745a25cb3c21301b4a, type: 3}
   - {fileID: 8300000, guid: 195a9cddb1ddb5e42806d7fb123ea963, type: 3}
+  - {fileID: 8300000, guid: 195a9cddb1ddb5e42806d7fb123ea963, type: 3}
+  - {fileID: 8300000, guid: 195a9cddb1ddb5e42806d7fb123ea963, type: 3}
+  - {fileID: 8300000, guid: b8e6784bd229643489fcbdb4769b86e2, type: 3}
 --- !u!4 &797409876
 Transform:
   m_ObjectHideFlags: 0

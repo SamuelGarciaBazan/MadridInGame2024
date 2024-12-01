@@ -240,6 +240,7 @@ public class SelctionScript : MonoBehaviour
             //click
             if (context.performed/*&& Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable"))*/)
             {
+                SoundManager.THIS.PlaySoundByIndex(4);
                 ProccesDragable(ref camray);
             }
             //release cuando sujetamos una ficha
