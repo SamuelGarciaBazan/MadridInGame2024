@@ -37,6 +37,7 @@ public class SelctionScript : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable")))
         {
+            SoundManager.THIS.PlaySoundByIndex(4);
             preDragPosition = hit.transform.position;
             objectReference = hit.transform;
             reference.gameObject.SetActive(true);
@@ -235,7 +236,6 @@ public class SelctionScript : MonoBehaviour
     public void drag(InputAction.CallbackContext context)
     {
         Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
         if(state == 0)
         {
             //click

@@ -16,23 +16,29 @@ public class Nodo : MonoBehaviour
     //IMPORTANTE: PUBLIC PARA DEBUGEAR, CAMBIAR !!!!
     public List<int> negativesModifiers = new List<int>((int)Figure.RecurseType.END_ENUM);
 
-    //figura que est� colocada, cambiar por enum
-    Figure figure = null;
+
+    List<Figure> figuresList = new List<Figure>();
+
+    [SerializeField]
+    private int maxFigures = 2;
 
    
     [SerializeField]
     NodosManager nodosManager = null;
 
+    //seteados desde el editor
+    [SerializeField]
+    List<Transform> buildsPositions;
+    
     NodeUIManager UIman;
 
     //recalcula los estados por si han cambiado
     public void updateGlobalStates()
     {
-        //Debug.Log("TusMuertoPisao");
-        //print(" levelfigure: " + figure.GetLevel());
-
+        //modo de transitividad
         NodosManager.TransitivityMode tMode = nodosManager.GetTransitivityMode();
 
+        //aplicacion de estados negativos/reset
         for (int i = 0; i < globalStates.Count; i++)
         {
             if(tMode == NodosManager.TransitivityMode.ONLY_GOOD)
@@ -47,36 +53,34 @@ public class Nodo : MonoBehaviour
             }
         }
 
-        //version solo mirar el propio nodo
-        if (figure != null)
-        {
-            //globalStates[(int)figure.GetRecurseType()] += figure.GetLevel();
-        }
-
         //version mirando los adyacentes
         if(nodosManager  != null)
         {
-            //Debug.Log("LatuyaPorSiAcaso");
-            List<Nodo> conectados;
+            //lista de todos los nodos conectados a este por el grafo
+            //NOTA: el propio nodo ESTÁ incluido
+            List<Nodo> conectados = nodosManager.GetConectedNodes(this);
 
-            conectados = nodosManager.GetConectedNodes(this);
-
+            //para cada nodo...
             for (int i = 0; i < conectados.Count; i++) { 
             
-                Figure fig = conectados[i].GetFigure();
-                
-                //transitividad buena
-                if(fig != null)
+                //lista de las otras figuras 
+                List<Figure> otherFigList = conectados[i].GetFiguresList();
+
+                //para cada figura del otro nodo...
+                for (int j = 0; j < otherFigList.Count; j++)
                 {
-                    //Debug.Log("PonganleCondon");
-                    //print(" levelfig: " + fig.GetLevel());
+                    Figure fig = otherFigList[j];
 
+                    //transitividad buena
+                    if (fig != null)
+                    {
+                        //añadir el beneficio del edificio del otro nodo
+                        globalStates[(int)fig.GetRecurseType()] += fig.GetLevel() + 1;
+                    }
 
-                    //añadir el beneficio del edificio del otro nodo
-                    globalStates[(int)fig.GetRecurseType()] += fig.GetLevel() + 1;
                 }
-
-
+                
+                //modificadores negativos del otro nodo
                 List<int> negMods;
 
                 negMods = conectados[i].GetNegativeModifiers();
@@ -97,7 +101,6 @@ public class Nodo : MonoBehaviour
                         //si hay transitividad negativa, sumar los modificadores negativos del otro nodo
                         globalStates[j] += -negMods[j];
                     }
-                    //Debug.Log("SeVino");
                 }
             }
         }
@@ -112,43 +115,69 @@ public class Nodo : MonoBehaviour
         updateGlobalStates();
     }
 
+    //devuelve -1 si no se puede mejorar ningun nodo
+    //si algun nodo se puede mejorar, devuelve su indice
+    private int checkCanImprove(Figure fig)
+    {
+        int resp = -1;
+
+        //recorremos la lista
+        for(int i = 0; i < figuresList.Count; i++)
+        {
+            //si son del mismo tipo
+            if (figuresList[i].GetRecurseType() ==fig.GetRecurseType())
+            {
+                //si se ha podido mejorar, devolvemos el indice correspondiente
+                if (figuresList[i].UpgradeLevel()) //esto ya actualiza la visual y el level de la figure
+                {
+                    resp = i;
+                    break;
+                }
+            }
+        }
+
+
+        return resp;
+    }
+
+
     //para setear una figura
     public bool setFigure(Figure fig)
     {
-        //si esta vacio
-        if (figure == null)
+        int index = checkCanImprove(fig);
+
+        //si no puedo mejorar ningun edificio
+        if (index == -1)
         {
-            Debug.Log("Colocado");
-            figure = fig;
-            updateGlobalStates();
-            UIman.updateUI(globalStates);
-            return true;
+            if(figuresList.Count < maxFigures) //queda hueco
+            {
+                //Debug.Log("Colocado");
+                figuresList.Add(fig);
+                nodosManager.uptateAllNodesStats();
+                UIman.updateUI(globalStates);
+                return true;
+            }
+            else //si no queda hueco, no hacer nada
+            {
+                return false;
+            }
         }
-        else if (figure.GetRecurseType() != fig.GetRecurseType()) //tipos distintos no hacer nada
+        else // si sí se puede mejorar
         {
-            Debug.Log("No valido");
-
-            return false;
-        }
-        else { //tipos iguales,actualizar modelo y sumar nivel
-
-            if(!figure.UpgradeLevel()) return false; // si no se puede subir nivel (porque nivelMax) se devuelve false
-
-            //destruimos la otra, actualizamos la actual
-            Debug.Log("Mejorado");
+            //destruir la otra figura
             Destroy(fig.gameObject);
 
-
-            updateGlobalStates() ;
+            //actualizar puntuaciones y UI
+            nodosManager.uptateAllNodesStats();
             UIman.updateUI(globalStates);
             return true;
-        }
+        }       
+    }
+    public List<Figure> GetFiguresList()
+    {
+        return figuresList;
     }
 
-    public Figure GetFigure()
-    {
-        return figure;
-    }
     public List<int> getGlobalStates()
     {
         return globalStates;
@@ -169,6 +198,13 @@ public class Nodo : MonoBehaviour
         UIman = GetComponent<NodeUIManager>();
 
         UIman.updateUI(globalStates);
-
     }
+
+    private void Update()
+    {
+        for (int i = 0; i< figuresList.Count; i++) {
+            figuresList[i].transform.position = buildsPositions[i].position;
+        }
+    }
+
 }
