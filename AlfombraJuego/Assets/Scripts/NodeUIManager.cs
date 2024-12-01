@@ -41,6 +41,8 @@ public class NodeUIManager : MonoBehaviour
             t.sprite = imgs[3];
         }
 
+        imgs[0].
+
     }
 
     // Update is called once per frame
