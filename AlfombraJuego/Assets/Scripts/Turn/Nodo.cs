@@ -153,7 +153,7 @@ public class Nodo : MonoBehaviour
             {
                 //Debug.Log("Colocado");
                 figuresList.Add(fig);
-                updateGlobalStates();
+                nodosManager.uptateAllNodesStats();
                 UIman.updateUI(globalStates);
                 return true;
             }
@@ -168,7 +168,7 @@ public class Nodo : MonoBehaviour
             Destroy(fig.gameObject);
 
             //actualizar puntuaciones y UI
-            updateGlobalStates();
+            nodosManager.uptateAllNodesStats();
             UIman.updateUI(globalStates);
             return true;
         }       
