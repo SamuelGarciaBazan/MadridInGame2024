@@ -3281,6 +3281,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 28181276763750086, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: dirLight
+      value: 
+      objectReference: {fileID: 2110928815}
+    - target: {fileID: 28181276763750086, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: spotLight1
+      value: 
+      objectReference: {fileID: 1830436712}
+    - target: {fileID: 28181276763750086, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: spotLight2
+      value: 
+      objectReference: {fileID: 1974024417}
+    - target: {fileID: 28181276763750086, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: turnManager
       value: 
       objectReference: {fileID: 1428736586}
