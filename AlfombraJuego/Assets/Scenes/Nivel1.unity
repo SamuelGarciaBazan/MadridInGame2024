@@ -2787,7 +2787,7 @@ MonoBehaviour:
   reference: {fileID: 69980211}
   heith: 3
   turnManager: {fileID: 1428736586}
-  scaleMultiplier: 3
+  scaleMultiplier: 1.5
 --- !u!114 &1219242708
 MonoBehaviour:
   m_ObjectHideFlags: 0
