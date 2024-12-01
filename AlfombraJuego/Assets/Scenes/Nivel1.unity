@@ -595,6 +595,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes: []
   transitivityMode: 0
+--- !u!1 &212463863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7934686032499325267, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+  m_PrefabInstance: {fileID: 1261138548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &232687167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b11faf7f41f16894484723148df53bce, type: 3}
@@ -3308,6 +3313,10 @@ PrefabInstance:
       propertyPath: turnManager
       value: 
       objectReference: {fileID: 1428736586}
+    - target: {fileID: 1424222447403869444, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1706894449791163115, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3405,6 +3414,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+--- !u!1 &1313776396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 837262435514512662, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+  m_PrefabInstance: {fileID: 1261138548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328315254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4534399270120954795, guid: 767d7b12da22d5b4ea235936549e174b, type: 3}
@@ -5145,6 +5159,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931692095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1424222447403869444, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+  m_PrefabInstance: {fileID: 1261138548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1944580103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6800476773978307054, guid: 767d7b12da22d5b4ea235936549e174b, type: 3}
@@ -6620,6 +6645,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 920057280}
     - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1313776396}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: lose
+      value: 
+      objectReference: {fileID: 212463863}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: mano
       value: 
       objectReference: {fileID: 2142702817}
@@ -6639,6 +6672,10 @@ PrefabInstance:
       propertyPath: buttonNextTurn
       value: 
       objectReference: {fileID: 257628786}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1931692095}
     - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: buttonFinishLevel
       value: 

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using static RandomDropper;
 using static RandomEvents;
 
 using TMPro;
+using UnityEngine.Events;
 
 //se encarga de la gestion del ciclo de turnos
 public class TurnManager : MonoBehaviour
@@ -51,6 +53,13 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     Animator animator;
 
+    [SerializeField]
+    GameObject win;
+    [SerializeField]
+    GameObject lose;
+
+    [SerializeField]
+    Button continueButton;
 
     public int getCurrentRound()
     {
@@ -303,19 +312,22 @@ public class TurnManager : MonoBehaviour
 
     }
 
-
+    private void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void FinishLevel() {
         
         gameOverPanel.SetActive(true);
         if (checkWinDefeatConditions()) {
-            gameOverPanel.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
-            gameOverPanel.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+            win.SetActive(true);
+            lose.SetActive(false);
         }
-
         else {
-            gameOverPanel.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
-            gameOverPanel.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
-
+            win.SetActive(false);
+            lose.SetActive(true);
+            continueButton.onClick.RemoveAllListeners();
+            continueButton.onClick.AddListener(MainMenu);
         }
     }
 
