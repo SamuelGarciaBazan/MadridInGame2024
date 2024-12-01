@@ -1660,10 +1660,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   values:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2925870235104567359}
+  - {fileID: 2812909966164348814}
+  - {fileID: 8326494464130531630}
+  - {fileID: 2700076053476696770}
   imgs:
   - {fileID: 21300000, guid: e05f13be2c15c1d40b17e2cdb925b5b1, type: 3}
   - {fileID: 21300000, guid: 6742e8599b3beee4991642cd408fed67, type: 3}
@@ -1672,6 +1672,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c3fe53f049b85a14a8608900e6eb67bf, type: 3}
   - {fileID: 21300000, guid: 2eb3e97dd90d34b4499a13e62bdffc76, type: 3}
   - {fileID: 21300000, guid: 349b90bff8c5c4a409b2d68010ba5b0a, type: 3}
+  lastList: 
 --- !u!1 &7403357518004560402
 GameObject:
   m_ObjectHideFlags: 0

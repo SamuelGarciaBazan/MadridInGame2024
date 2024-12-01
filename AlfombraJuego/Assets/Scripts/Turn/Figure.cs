@@ -90,7 +90,7 @@ public class Figure : MonoBehaviour
             return;
         }
 
-        if(type == RecurseType.OCIO) //no incremental
+        if(type == RecurseType.OCIO || type == RecurseType.ZONAS_VERDES) //no incremental
         {
             for (int i = 0; i < visuals.childCount; i++)
             {

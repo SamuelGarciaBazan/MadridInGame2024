@@ -37,6 +37,7 @@ public class SelctionScript : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable")))
         {
+            SoundManager.THIS.PlaySoundByIndex(4);
             preDragPosition = hit.transform.position;
             objectReference = hit.transform;
             reference.gameObject.SetActive(true);
@@ -54,7 +55,7 @@ public class SelctionScript : MonoBehaviour
                 nodeManager.enableOutline(true);
 
                 print(objectReference.GetChild(0).transform.localScale);
-                previousScale = transform.localScale;
+                //previousScale = transform.localScale;
                 objectReference.GetChild(0).transform.localScale = objectReference.GetChild(0).transform.localScale * scaleMultiplier;
             }
         }
@@ -63,95 +64,180 @@ public class SelctionScript : MonoBehaviour
     private void dropBuild(Ray camray)
     {
         RaycastHit hit;
-        //si no somos carretera
-        if (objectReference.GetComponent<Figure>().GetRecurseType() != Figure.RecurseType.END_ENUM)
+        nodeManager.enableOutline(false);
+        //restauramos la escala
+        objectReference.GetChild(0).transform.localScale = objectReference.GetChild(0).transform.localScale / scaleMultiplier;
+
+        // CASO 1 : DEL TREN A UN NODO
+        if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
+            objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
+            turnManager.getCurrentPoints() >= 2 &&  // Si tenemos puntos para pasarlo de un tren a un nodo
+            objectReference.GetComponent<Figure>().getWaitingTurns() <= 0 && //ver si la figure no tiene que esperar
+            hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())) // Si se puede colocar en el nodo
         {
-            nodeManager.enableOutline(false);
-            //restauramos la escala
-            objectReference.GetChild(0).transform.localScale = previousScale;
-
-            // CASO 1 : DEL TREN A UN NODO
-            if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
-                objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
-                turnManager.getCurrentPoints() >= 2 &&  // Si tenemos puntos para pasarlo de un tren a un nodo
-                objectReference.GetComponent<Figure>().getWaitingTurns() <= 0 && //ver si la figure no tiene que esperar
-                hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())) // Si se puede colocar en el nodo
-            {
-                turnManager.spendPoints(2);
+            turnManager.spendPoints(2);
 
 
-                //resulta que no coinciden centro y posicion del objeto
-                Debug.Log(objectReference.GetComponent<Collider>().bounds.center);
-                Debug.Log(objectReference.position);
+            //resulta que no coinciden centro y posicion del objeto
+            Debug.Log(objectReference.GetComponent<Collider>().bounds.center);
+            Debug.Log(objectReference.position);
 
-                //reubicamos
-                objectReference.position =
-                    hit.transform.position +
-                    new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                    new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+            //reubicamos
+            objectReference.position =
+                hit.transform.position +
+                new Vector3(0, hit.collider.bounds.extents.y, 0) +
+                new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
 
-                Debug.Log(objectReference.position);
+            Debug.Log(objectReference.position);
 
-                objectReference.GetComponent<Collider>().enabled = false;
+            objectReference.GetComponent<Collider>().enabled = false;
 
-                // Cambiamos el padre de la figura para que ya no dependa del tren
-                objectReference.SetParent(hit.collider.transform);
+            // Cambiamos el padre de la figura para que ya no dependa del tren
+            objectReference.SetParent(hit.collider.transform);
 
-                objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.NODO);
+            objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.NODO);
 
-            }
-            // CASO 2 : DE LA MANO A UN NODO
-            else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
-                objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.MANO &&   // Si viene de la mano
-                turnManager.getCurrentPoints() >= 1 && // Si tenemos puntos para pasarlo de la mano a un nodo 
-                  objectReference.GetComponent<Figure>().getWaitingTurns() <= 0 && //ver si la figure no tiene que esperar
-                hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())// Si se puede colocar en el nodo IMPORTANTE: ESTE VA ULTIMO!!!!
-                )
-            {
-                turnManager.spendPoints(1);
-                objectReference.position =
-                    hit.transform.position +
-                    new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                    new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+        }
+        // CASO 2 : DE LA MANO A UN NODO
+        else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
+            objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.MANO &&   // Si viene de la mano
+            turnManager.getCurrentPoints() >= 1 && // Si tenemos puntos para pasarlo de la mano a un nodo 
+              objectReference.GetComponent<Figure>().getWaitingTurns() <= 0 && //ver si la figure no tiene que esperar
+            hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())// Si se puede colocar en el nodo IMPORTANTE: ESTE VA ULTIMO!!!!
+            )
+        {
+            turnManager.spendPoints(1);
+            objectReference.position =
+                hit.transform.position +
+                new Vector3(0, hit.collider.bounds.extents.y, 0) +
+                new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
 
-                objectReference.GetComponent<Collider>().enabled = false;
+            objectReference.GetComponent<Collider>().enabled = false;
 
-                // Cambiamos el padre de la figura para que ya no dependa de la mano
-                objectReference.SetParent(hit.collider.transform);
+            // Cambiamos el padre de la figura para que ya no dependa de la mano
+            objectReference.SetParent(hit.collider.transform);
 
-                objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.NODO);
-            }
-            // CASO 3 : DEL TREN A LA MANO
-            else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&   // Si se suelta en la mano
-                objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
-                turnManager.getCurrentPoints() >= 1 &&  // Si tenemos puntos para pasarlo del tren a la mano
-                hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform))    // Si se puede añadir la figura a la mano
-            {
-                turnManager.spendPoints(1);
+            objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.NODO);
+        }
+        // CASO 3 : DEL TREN A LA MANO
+        else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&   // Si se suelta en la mano
+            objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
+            turnManager.getCurrentPoints() >= 1 &&  // Si tenemos puntos para pasarlo del tren a la mano
+            hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform))    // Si se puede añadir la figura a la mano
+        {
+            turnManager.spendPoints(1);
 
-                objectReference.position =
-                    hit.transform.position +
-                    new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                    new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+            //objectReference.position =
+            //    hit.transform.position +
+            //    new Vector3(0, hit.collider.bounds.extents.y, 0) +
+            //    new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
 
-                objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.MANO);
+            objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.MANO);
 
-            }
-            //CASO 4 : SE QUEDA DONDE ESTÁ
-            else
-            {
-                objectReference.position = preDragPosition + new Vector3(0, heith, 0);
-                objectReference.GetComponent<Rigidbody>().isKinematic = false;
-            }
+        }
+        //CASO 4 : SE QUEDA DONDE ESTÁ
+        else
+        {
+            objectReference.position = preDragPosition + new Vector3(0, heith, 0);
+            objectReference.GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
+
+    private void dropRoad(Ray camray)
+    {
+        RaycastHit hit;
+
+        carreterasManager.enableOutline(false);
+
+        // CASO 1 : DEL TREN A UNA CARRETERA
+        if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Carretera")) &&    // Si se suelta en un nodo
+            objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
+            turnManager.getCurrentPoints() >= 2 &&  // Si tenemos puntos para pasarlo de un tren a un nodo
+            !hit.transform.GetComponent<Carretera>().isOcuped) // Si se puede colocar en la carretera
+        {
+
+            //actualizar cosillas
+            hit.transform.GetComponent<Carretera>().isOcuped = true;
+
+            nodeManager.ponArista(
+                hit.transform.GetComponent<Carretera>().node1,
+                hit.transform.GetComponent<Carretera>().node2);
+
+            nodeManager.uptateAllNodesStats();
+
+            turnManager.spendPoints(2);
+
+            objectReference.GetComponent<Collider>().enabled = false;
+
+            // Cambiamos el padre de la figura para que ya no dependa del tren
+            objectReference.SetParent(hit.collider.transform);
+
+            objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.CARRETERA);
+
+            objectReference.transform.localScale = new Vector3(1, 1, 1.22f);
+            objectReference.localRotation = Quaternion.identity;
+
+            objectReference.position = new Vector3(
+                                    objectReference.position.x, 0.08f,
+                                        objectReference.position.z);
+
+        }
+        // CASO 2 : DE LA MANO A UNA CARRETERA
+        else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Carretera")) &&    // Si se suelta en un nodo
+            objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.MANO &&   // Si viene de la mano
+            turnManager.getCurrentPoints() >= 1 && // Si tenemos puntos para pasarlo de la mano a un nodo 
+            !hit.transform.GetComponent<Carretera>().isOcuped// Si se puede colocar en el nodo IMPORTANTE: ESTE VA ULTIMO!!!!
+            )
+        {
+
+            //actualizar cosillas
+            hit.transform.GetComponent<Carretera>().isOcuped = true;
+
+            nodeManager.ponArista(
+                hit.transform.GetComponent<Carretera>().node1,
+                hit.transform.GetComponent<Carretera>().node2);
+
+            nodeManager.uptateAllNodesStats();
+
+            turnManager.spendPoints(1);
+
+            objectReference.GetComponent<Collider>().enabled = false;
+
+            // Cambiamos el padre de la figura para que ya no dependa de la mano
+            objectReference.SetParent(hit.collider.transform);
+
+            objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.CARRETERA);
+
+            objectReference.transform.localScale = new Vector3(1, 1, 1.22f);
+            objectReference.localRotation = Quaternion.identity;
+            objectReference.position = new Vector3(
+                                    objectReference.position.x, 0.08f,
+                                        objectReference.position.z);
+
+
+
+        }
+        // CASO 3 : DEL TREN A LA MANO
+        else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&   // Si se suelta en la mano
+            objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
+            turnManager.getCurrentPoints() >= 1 &&  // Si tenemos puntos para pasarlo del tren a la mano
+            hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform))    // Si se puede añadir la figura a la mano
+        {
+            turnManager.spendPoints(1);
+            objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.MANO);
+        }
+        //CASO 4 : SE QUEDA DONDE ESTÁ
+        else
+        {
+            objectReference.position = preDragPosition + new Vector3(0, heith, 0);
+            objectReference.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
     public void drag(InputAction.CallbackContext context)
     {
         Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
         if(state == 0)
         {
-            
             //click
             if (context.performed/*&& Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable"))*/)
             {
@@ -161,205 +247,17 @@ public class SelctionScript : MonoBehaviour
 
             else if (context.canceled&&objectReference!=null)
             {
-                dropBuild(camray);
                
                 //si no somos carretera
                 if (objectReference.GetComponent<Figure>().GetRecurseType() != Figure.RecurseType.END_ENUM)
                 {
-                    nodeManager.enableOutline(false);
-                    //restauramos la escala
-                    objectReference.GetChild(0).transform.localScale =previousScale;
-
-                    // CASO 1 : DEL TREN A UN NODO
-                    if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
-                        objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
-                        turnManager.getCurrentPoints() >= 2 &&  // Si tenemos puntos para pasarlo de un tren a un nodo
-                        objectReference.GetComponent<Figure>().getWaitingTurns() <= 0   && //ver si la figure no tiene que esperar
-                        hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())) // Si se puede colocar en el nodo
-                    {
-                        turnManager.spendPoints(2);
-
-
-                        //resulta que no coinciden centro y posicion del objeto
-                        Debug.Log(objectReference.GetComponent<Collider>().bounds.center);
-                        Debug.Log(objectReference.position);
-
-                        //reubicamos
-                        objectReference.position =
-                            hit.transform.position +
-                            new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                            new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
-
-                        Debug.Log(objectReference.position);
-
-                        objectReference.GetComponent<Collider>().enabled = false;
-
-                        // Cambiamos el padre de la figura para que ya no dependa del tren
-                        objectReference.SetParent(hit.collider.transform);
-
-                        objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.NODO);
-
-                    }
-                    // CASO 2 : DE LA MANO A UN NODO
-                    else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Nodo")) &&    // Si se suelta en un nodo
-                        objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.MANO &&   // Si viene de la mano
-                        turnManager.getCurrentPoints() >= 1 && // Si tenemos puntos para pasarlo de la mano a un nodo 
-                          objectReference.GetComponent<Figure>().getWaitingTurns() <= 0   && //ver si la figure no tiene que esperar
-                        hit.transform.GetComponent<Nodo>().setFigure(objectReference.gameObject.GetComponent<Figure>())// Si se puede colocar en el nodo IMPORTANTE: ESTE VA ULTIMO!!!!
-                        )
-                    {
-                        turnManager.spendPoints(1);
-                        objectReference.position =
-                            hit.transform.position +
-                            new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                            new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
-
-                        objectReference.GetComponent<Collider>().enabled = false;
-
-                        // Cambiamos el padre de la figura para que ya no dependa de la mano
-                        objectReference.SetParent(hit.collider.transform);
-
-                        objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.NODO);
-                    }
-                    // CASO 3 : DEL TREN A LA MANO
-                    else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&   // Si se suelta en la mano
-                        objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
-                        turnManager.getCurrentPoints() >= 1 &&  // Si tenemos puntos para pasarlo del tren a la mano
-                        hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform))    // Si se puede añadir la figura a la mano
-                    {
-                        turnManager.spendPoints(1);
-
-                        objectReference.position =
-                            hit.transform.position +
-                            new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                            new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
-
-                        objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.MANO);
-
-                    }
-                    //CASO 4 : SE QUEDA DONDE ESTÁ
-                    else
-                    {
-                        objectReference.position = preDragPosition + new Vector3(0, heith, 0);
-                        objectReference.GetComponent<Rigidbody>().isKinematic = false;
-                    }
-
-
-
-
-
-
+                    dropBuild(camray);
                 }
                 else
                 {
-                    carreterasManager.enableOutline(false);
-
-                    // CASO 1 : DEL TREN A UNA CARRETERA
-                    if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Carretera")) &&    // Si se suelta en un nodo
-                        objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
-                        turnManager.getCurrentPoints() >= 2 &&  // Si tenemos puntos para pasarlo de un tren a un nodo
-                        !hit.transform.GetComponent<Carretera>().isOcuped) // Si se puede colocar en la carretera
-                    {
-
-                        //actualizar cosillas
-                        hit.transform.GetComponent<Carretera>().isOcuped = true;
-
-                        nodeManager.ponArista(
-                            hit.transform.GetComponent<Carretera>().node1,
-                            hit.transform.GetComponent<Carretera>().node2);
-
-                        nodeManager.uptateAllNodesStats();
-
-
-
-                        turnManager.spendPoints(2);
-                        objectReference.position =
-                            hit.transform.position +
-                            new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                            new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
-
-                        objectReference.GetComponent<Collider>().enabled = false;
-
-                        // Cambiamos el padre de la figura para que ya no dependa del tren
-                        objectReference.SetParent(hit.collider.transform);
-
-                        objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.CARRETERA);
-
-                        objectReference.transform.localScale = new Vector3(1, 1, 1.22f);
-                        objectReference.localRotation = Quaternion.identity;
-
-                        objectReference.position = new Vector3(
-                                                objectReference.position.x, 0.08f   ,
-                                                    objectReference.position.z);
-
-                    }
-                    // CASO 2 : DE LA MANO A UNA CARRETERA
-                    else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Carretera")) &&    // Si se suelta en un nodo
-                        objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.MANO &&   // Si viene de la mano
-                        turnManager.getCurrentPoints() >= 1 && // Si tenemos puntos para pasarlo de la mano a un nodo 
-                        !hit.transform.GetComponent<Carretera>().isOcuped// Si se puede colocar en el nodo IMPORTANTE: ESTE VA ULTIMO!!!!
-                        )
-                    {
-
-                        //actualizar cosillas
-                        hit.transform.GetComponent<Carretera>().isOcuped = true;
-
-                        nodeManager.ponArista(
-                            hit.transform.GetComponent<Carretera>().node1,
-                            hit.transform.GetComponent<Carretera>().node2);
-
-                        nodeManager.uptateAllNodesStats();
-
-
-
-
-                        turnManager.spendPoints(1);
-                        objectReference.position =
-                            hit.transform.position +
-                            new Vector3(0, hit.collider.bounds.extents.y, 0) +
-                            new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
-
-                        objectReference.GetComponent<Collider>().enabled = false;
-
-                        // Cambiamos el padre de la figura para que ya no dependa de la mano
-                        objectReference.SetParent(hit.collider.transform);
-
-                        objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.CARRETERA);
-
-                        objectReference.transform.localScale = new Vector3(1,1,1.22f);
-                        objectReference.localRotation = Quaternion.identity;
-
-                        objectReference.position = new Vector3(
-                                                objectReference.position.x, 0.08f,
-                                                    objectReference.position.z);
-
-                        
-
-                    }
-                    // CASO 3 : DEL TREN A LA MANO
-                    else if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Mano")) &&   // Si se suelta en la mano
-                        objectReference.GetComponent<Figure>().GetFigurePlacement() == Figure.FigurePlacement.TREN &&   // Si viene del tren
-                        turnManager.getCurrentPoints() >= 1 &&  // Si tenemos puntos para pasarlo del tren a la mano
-                        hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform))    // Si se puede añadir la figura a la mano
-                    {
-                        turnManager.spendPoints(1);
-                        objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.MANO);
-                    }
-                    //CASO 4 : SE QUEDA DONDE ESTÁ
-                    else
-                    {
-                        objectReference.position = preDragPosition + new Vector3(0, heith, 0);
-                        objectReference.GetComponent<Rigidbody>().isKinematic = false;
-                    }
-
-
-
+                    dropRoad(camray);
+                    
                 }
-                
-
-
-
-
                 objectReference = null;
                 //Debug.Log("TuViejaDrop");
                 reference.gameObject.SetActive(false);

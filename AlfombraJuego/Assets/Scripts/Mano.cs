@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mano : MonoBehaviour
     {
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +24,12 @@ public class Mano : MonoBehaviour
             Transform figuraPosition = transform.GetChild(i);
             if(figuraPosition.childCount == 0) {
                 figure.SetParent(figuraPosition);
-                figure.localPosition = new Vector3(0, figure.GetComponent<Collider>().bounds.extents.y, 0);
+
+                //Debug.Log("y Bounds "+figure.GetComponent<Collider>().bounds.extents.y);
+                //Debug.Log("y Center "+figure.GetComponent<Collider>().bounds.center.y);
+
+                figure.position = figuraPosition.position+ new Vector3(0, figure.GetComponent<Collider>().bounds.extents.y, 0);
+                
                 return true;
             }
         }
