@@ -326,7 +326,8 @@ public class TurnManager : MonoBehaviour
         else {
             win.SetActive(false);
             lose.SetActive(true);
-            continueButton.onClick.RemoveAllListeners();
+            if(SceneManager.GetActiveScene().buildIndex != 3)
+                continueButton.onClick.RemoveAllListeners();
             continueButton.onClick.AddListener(MainMenu);
         }
     }
