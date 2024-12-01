@@ -33,4 +33,9 @@ public class FixedEvents : MonoBehaviour
         return fixedEventsList[0].fixedEvents;
    
     }
+
+    public int getFirstFixedEventRound()
+    {
+        return fixedEventsList[0].roundTime;
+    }
 }

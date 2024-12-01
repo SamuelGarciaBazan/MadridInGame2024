@@ -49,7 +49,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     Animator animator;
 
-
+    public int getCurrentRound()
+    {
+        return currentRound;
+    }
     public int getNodosCount()
     {
         return nodosManager.GetNodes().Count;
@@ -330,5 +333,11 @@ public class TurnManager : MonoBehaviour
         debugFigureSet();
         SoundManager.THIS.PlayMusic();
     }
+
+    public int getFirstFixedEventRound()
+    {
+        return fixedEvents.getFirstFixedEventRound();
+    }
+
 
 }
