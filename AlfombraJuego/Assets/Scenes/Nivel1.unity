@@ -2701,6 +2701,22 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: c268e812-d91d-4a7a-9612-bf56feb39ea7
     m_ActionName: 'Player/Drag[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6290003699341244267}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aab9fd2f-964c-4569-bf29-40df4178cbf4
+    m_ActionName: Player/ReturnMenu
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -6631,6 +6647,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+--- !u!114 &6290003699341244267 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8930390629018354184, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+  m_PrefabInstance: {fileID: 6290003699341244266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e6be62c7027f84cb9caa5ab9e65877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

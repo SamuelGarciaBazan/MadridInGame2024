@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4559332553820217097}
   - component: {fileID: 1411296099036708861}
   - component: {fileID: 1203891185359973871}
+  - component: {fileID: 8930390629018354184}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
   buttonFinishLevel: {fileID: 0}
   gameOverPanel: {fileID: 0}
   bocadillosTime: 4
+  animator: {fileID: 0}
 --- !u!114 &1411296099036708861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +128,15 @@ MonoBehaviour:
     cantidadesUniform: 2
     cantidadesChancesUniform: 0
     nodesChancesUniform: 0
+--- !u!114 &8930390629018354184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624481323716416783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e6be62c7027f84cb9caa5ab9e65877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
