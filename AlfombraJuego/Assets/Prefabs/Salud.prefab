@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visuals: {fileID: 7943889257687039443}
   level: 0
-  maxLevel: 1
+  maxLevel: 2
   type: 2
   placement: 0
   waitingTurns: 0
