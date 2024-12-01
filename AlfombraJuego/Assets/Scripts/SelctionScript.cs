@@ -29,6 +29,8 @@ public class SelctionScript : MonoBehaviour
     [SerializeField]
     float scaleMultiplier;
 
+    Vector3 previousScale;
+
     public void drag(InputAction.CallbackContext context)
     {
         Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -67,17 +69,12 @@ public class SelctionScript : MonoBehaviour
                     }
 
                     print(objectReference.GetChild(0).transform.localScale);
+                    previousScale = transform.localScale;
                     objectReference.GetChild(0).transform.localScale = objectReference.GetChild(0).transform.localScale * scaleMultiplier;
                 }
-
-               
-                
             }
-            //release
+            //release cuando sujetamos una ficha
 
-            ///TODO:
-            ///comprobar que la jugada puede ser valida segun la economía de acciones
-            ///detectar que se ha cogido una ficha y se ha guardado en la reserva
             else if (context.canceled&&objectReference!=null)
             {
 
@@ -102,8 +99,8 @@ public class SelctionScript : MonoBehaviour
                         nodeManager.transform.GetChild(i).GetComponent<Outline>().enabled = false;
                     }
 
-                    objectReference.GetChild(0).transform.localScale =objectReference.GetChild(0).transform.localScale /scaleMultiplier;
-
+                    objectReference.GetChild(0).transform.localScale =previousScale;
+                    
 
                 }
 
@@ -160,7 +157,14 @@ public class SelctionScript : MonoBehaviour
                         hit.transform.GetComponent<Mano>().AddFigure(objectReference.transform))    // Si se puede añadir la figura a la mano
                     {
                         turnManager.spendPoints(1);
+
+                        objectReference.position =
+                            hit.transform.position +
+                            new Vector3(0, hit.collider.bounds.extents.y, 0) +
+                            new Vector3(0, objectReference.GetComponent<Collider>().bounds.extents.y, 0);
+
                         objectReference.GetComponent<Figure>().SetFigurePlacement(Figure.FigurePlacement.MANO);
+
                     }
                     //CASO 4 : SE QUEDA DONDE ESTÁ
                     else
