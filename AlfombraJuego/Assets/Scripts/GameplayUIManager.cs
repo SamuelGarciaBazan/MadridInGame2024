@@ -10,7 +10,7 @@ public class GameplayUIManager : MonoBehaviour
     TMP_Text turno;
 
     [SerializeField]
-    Image buttonImage;
+    GameObject buttonImage;
 
     TurnManager turnManager;
 
@@ -20,12 +20,11 @@ public class GameplayUIManager : MonoBehaviour
         turno.text = "Turno " +turnManager.CurrentRound;
         if(turnManager.CurrentActions == 0)
         {
-            //buttonImage.
-            //buttonImage.tintColor = Color.yellow;
+            buttonImage.GetComponent<Image>().tintColor = Color.yellow;
         }
         else
         {
-            //buttonImage.tintColor = Color.white;
+            buttonImage.GetComponent<Image>().tintColor = Color.white;
         }
     }
 
