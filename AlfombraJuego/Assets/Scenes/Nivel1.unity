@@ -3522,10 +3522,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1428736586}
     - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
-      propertyPath: action.m_Name
-      value: Action
-      objectReference: {fileID: 0}
-    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
       propertyPath: nextTurnButton
       value: 
       objectReference: {fileID: 257628786}
