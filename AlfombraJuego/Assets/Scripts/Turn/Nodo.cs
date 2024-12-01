@@ -128,7 +128,7 @@ public class Nodo : MonoBehaviour
             if (figuresList[i].GetRecurseType() ==fig.GetRecurseType())
             {
                 //si se ha podido mejorar, devolvemos el indice correspondiente
-                if (figuresList[i].UpgradeLevel()) //esto ya actualiza la visual y el level de la figure
+                if (figuresList[i].UpgradeLevel(fig.GetLevel() + 1)) //esto ya actualiza la visual y el level de la figure
                 {
                     resp = i;
                     break;
