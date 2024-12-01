@@ -2787,7 +2787,7 @@ MonoBehaviour:
   reference: {fileID: 69980211}
   heith: 3
   turnManager: {fileID: 1428736586}
-  scaleMultiplier: 1.5
+  scaleMultiplier: 3
 --- !u!114 &1219242708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3389,10 +3389,6 @@ PrefabInstance:
       propertyPath: turnManager
       value: 
       objectReference: {fileID: 1428736586}
-    - target: {fileID: 1610239858342381150, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
-      propertyPath: buttonImage
-      value: 
-      objectReference: {fileID: 257628786}
     - target: {fileID: 1706894449791163115, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3477,13 +3473,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1428736586}
-    - target: {fileID: 1733518875561307766, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: nextTurn
-      objectReference: {fileID: 0}
     - target: {fileID: 4524057932803909705, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: m_Name
       value: GameplayUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193989314622196341, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973929954781997647, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6817,22 +6817,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9087258106510239968, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
-      propertyPath: m_Size.z
-      value: 0.0010535108
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087258106510239968, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
-      propertyPath: m_Center.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087258106510239968, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
-      propertyPath: m_Center.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087258106510239968, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
-      propertyPath: m_Center.z
-      value: 0.00047324094
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6910,6 +6894,18 @@ PrefabInstance:
       propertyPath: mano
       value: 
       objectReference: {fileID: 2142702817}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: color.b
+      value: 0.21509439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: color.g
+      value: 0.21509439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: color.r
+      value: 0.21509439
+      objectReference: {fileID: 0}
     - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: nodosManager
       value: 
