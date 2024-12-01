@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using static RandomDropper;
 using static RandomEvents;
 
+using TMPro;
+
 //se encarga de la gestion del ciclo de turnos
 public class TurnManager : MonoBehaviour
 {
@@ -189,6 +191,8 @@ public class TurnManager : MonoBehaviour
         var obj = nodosManager.GetNodes()[currEventData.targetNodeIndex].transform.GetChild(1).gameObject;
         obj.SetActive(true);
 
+        obj.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "-" + currEventData.cantidad.ToString();
+
         obj.GetComponent<NodoUIBocadillo>().setBocadillo(currEventData.type);
 
 
@@ -301,6 +305,8 @@ public class TurnManager : MonoBehaviour
 
             var obj = nodosManager.GetNodes()[data.targetNodeIndex].transform.GetChild(1).gameObject;
             obj.SetActive(true);
+            obj.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "-" + data.cantidad.ToString();
+
 
             obj.GetComponent<NodoUIBocadillo>().setBocadillo(data.type);
 
