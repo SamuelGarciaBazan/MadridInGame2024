@@ -27,5 +27,10 @@ public class FixedEvents : MonoBehaviour
         return null;
     }
 
-
+    //devuelve la primera lista de eventos fixeados
+    public List<RecurseEventData> getFirstFixedEvents()
+    {
+        return fixedEventsList[0].fixedEvents;
+   
+    }
 }
