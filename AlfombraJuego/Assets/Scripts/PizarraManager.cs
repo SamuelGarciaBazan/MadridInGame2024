@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using TMPro;
 public class PizarraManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    TurnManager turnManager;    
+    TurnManager turnManager;
+
+    public TextMeshProUGUI textoDias;
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -23,15 +26,12 @@ public class PizarraManager : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         turnManager.desacticaBocadillosFixed();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        textoDias.text = $"Dia {turnManager.getCurrentRound()} / {turnManager.getFirstFixedEventRound()}";
     }
+
+
+        
 }

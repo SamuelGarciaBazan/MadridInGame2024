@@ -477,6 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnManager: {fileID: 0}
+  textoDias: {fileID: 7286891608515442209}
 --- !u!1 &1533406673957705241
 GameObject:
   m_ObjectHideFlags: 0
