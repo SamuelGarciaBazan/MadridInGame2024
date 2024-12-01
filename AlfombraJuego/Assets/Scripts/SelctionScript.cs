@@ -26,6 +26,9 @@ public class SelctionScript : MonoBehaviour
     Nodo n1;
     Nodo n2;
 
+    [SerializeField]
+    float scaleMultiplier;
+
     public void drag(InputAction.CallbackContext context)
     {
         Ray camray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -62,6 +65,9 @@ public class SelctionScript : MonoBehaviour
                     {
                         nodeManager.transform.GetChild(i).GetComponent<Outline>().enabled = true;
                     }
+
+                    print(objectReference.GetChild(0).transform.localScale);
+                    objectReference.GetChild(0).transform.localScale = objectReference.GetChild(0).transform.localScale * scaleMultiplier;
                 }
 
                
@@ -95,6 +101,10 @@ public class SelctionScript : MonoBehaviour
                     {
                         nodeManager.transform.GetChild(i).GetComponent<Outline>().enabled = false;
                     }
+
+                    objectReference.GetChild(0).transform.localScale =objectReference.GetChild(0).transform.localScale /scaleMultiplier;
+
+
                 }
 
 
