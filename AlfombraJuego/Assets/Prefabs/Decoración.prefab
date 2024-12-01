@@ -2512,8 +2512,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cochesito_juguete02
       objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.050399996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.007999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.055500083
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8537237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5207264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327617555294743793, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 62.762
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9206260140682977840, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c875374f276b6e4bb16f1ecedda7aec, type: 3}
