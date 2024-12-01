@@ -51,6 +51,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     Animator animator;
 
+
     public int getCurrentRound()
     {
         return currentRound;

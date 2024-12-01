@@ -1366,6 +1366,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 57a7db44c25461748ae234f359c01d4b, type: 3}
   - {fileID: 8300000, guid: c1a9d8831fb8f0549b6fcf7a5ca1938c, type: 3}
   - {fileID: 8300000, guid: b8e6784bd229643489fcbdb4769b86e2, type: 3}
+  - {fileID: 8300000, guid: 94870632a85854747895a9c1aa22c914, type: 3}
   musicClip: {fileID: 0}
 --- !u!4 &797409876
 Transform:
@@ -1468,6 +1469,11 @@ Transform:
 --- !u!4 &920057280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3860098799808150993, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+  m_PrefabInstance: {fileID: 2116384787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &948043289 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
   m_PrefabInstance: {fileID: 2116384787}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1024352186
@@ -6148,6 +6154,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 18.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 3.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515933246954548817, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7094972471631260615, guid: 1cea7ed6a8ffdb04883ca22ab801c4b5, type: 3}
       propertyPath: m_Name
       value: Train
@@ -6199,6 +6229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 1428736586}
   buttonNextTurn: {fileID: 257628786}
+  smoke: {fileID: 948043289}
 --- !u!1001 &2138350059
 PrefabInstance:
   m_ObjectHideFlags: 0
