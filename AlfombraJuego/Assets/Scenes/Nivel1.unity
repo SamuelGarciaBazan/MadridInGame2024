@@ -187,6 +187,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -665,6 +673,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1006,6 +1022,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1292,6 +1316,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2595,7 +2627,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3227,6 +3259,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3355,6 +3395,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTip: {fileID: 1875500388}
+--- !u!1001 &1335415589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 975625145945132421, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_Name
+      value: "Decoraci\xF3n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107372046185486916, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73008c18b2ebb5247b8c2d381b875a8d, type: 3}
 --- !u!4 &1400862251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b11faf7f41f16894484723148df53bce, type: 3}
@@ -3601,6 +3698,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4826,6 +4931,55 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7193989314622196341, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
   m_PrefabInstance: {fileID: 1261138548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1884985365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884985367}
+  - component: {fileID: 1884985366}
+  m_Layer: 0
+  m_Name: Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1884985366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884985365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 45976ee9cb7f4ee4183e8a3804b54def, type: 2}
+--- !u!4 &1884985367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884985365}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.932847, y: 0.013387635, z: -16.101433}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1944580103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6800476773978307054, guid: 767d7b12da22d5b4ea235936549e174b, type: 3}
@@ -5780,6 +5934,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6089,6 +6251,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vias de Tren_01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2027699854168366515, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16af4eaae7a7212429779f3650261502, type: 2}
+    - target: {fileID: 8525748295099299706, guid: b11faf7f41f16894484723148df53bce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1035182b59917ad4b858f316051fb62e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6349,3 +6519,5 @@ SceneRoots:
   - {fileID: 533771011}
   - {fileID: 907101153}
   - {fileID: 797409876}
+  - {fileID: 1335415589}
+  - {fileID: 1884985367}
