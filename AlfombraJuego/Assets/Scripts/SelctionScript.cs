@@ -322,6 +322,22 @@ public class SelctionScript : MonoBehaviour
         carreterasManager = FindAnyObjectByType<CarreterasManager>();
 
         if (turnManager == null) print("¡¡¡¡¡BROOOO LA REFERENCIA DEL TURN MANAGEEEEEEER!!!!!");
+
+
+        //desactivar outliners
+        int nNodes = nodeManager.transform.childCount;
+        for (int i = 0; i < nNodes; i++)
+        {
+            nodeManager.transform.GetChild(i).GetComponent<Outline>().enabled = false;
+        }
+
+        //desactivar outliners 
+        nNodes = carreterasManager.transform.childCount;
+        for (int i = 0; i < nNodes; i++)
+        {
+            carreterasManager.transform.GetChild(i).GetComponent<Outline>().enabled = false;
+        }
+
     }
 
     // Update is called once per frame
