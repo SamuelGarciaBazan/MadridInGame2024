@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayUIManager : MonoBehaviour
 {
@@ -8,13 +9,23 @@ public class GameplayUIManager : MonoBehaviour
     [SerializeField]
     TMP_Text turno;
 
+    [SerializeField]
+    GameObject buttonImage;
 
     TurnManager turnManager;
 
     public void updateUI()
     {
-        acciones.text = "Acciones: " +turnManager.CurrentActions;
+        acciones.text = turnManager.CurrentActions.ToString();
         turno.text = "Turno " +turnManager.CurrentRound;
+        if(turnManager.CurrentActions == 0)
+        {
+            buttonImage.GetComponent<Image>().color = Color.yellow;
+        }
+        else
+        {
+            buttonImage.GetComponent<Image>().color = Color.white;
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

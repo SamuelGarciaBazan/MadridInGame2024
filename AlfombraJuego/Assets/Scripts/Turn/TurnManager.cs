@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static RandomDropper;
 using static RandomEvents;
 
@@ -40,6 +41,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField] GameObject buttonNextTurn;
     [SerializeField] GameObject buttonFinishLevel;
     [SerializeField] GameObject gameOverPanel;
+
+
+    [SerializeField]
+    float bocadillosTime;
 
     public int getNodosCount()
     {
@@ -151,8 +156,29 @@ public class TurnManager : MonoBehaviour
 
     void applyVisualCurrEvent()
     {
+        //nodosManager.GetNodes()[currEventData.targetNodeIndex].transform.GetChild(1).gameObject.SetActive(true);
+        //nodosManager.GetNodes()[currEventData.targetNodeIndex].transform.GetChild(1).GetComponent<NodoUIBocadillo>().setBocadillo(currEventData.type);
 
+        StartCoroutine(corrutinaBocadillo());
     }
+
+    System.Collections.IEnumerator corrutinaBocadillo()
+    {
+
+        print("a");
+        var obj = nodosManager.GetNodes()[currEventData.targetNodeIndex].transform.GetChild(1).gameObject;
+        obj.SetActive(true);
+
+        obj.GetComponent<NodoUIBocadillo>().setBocadillo(currEventData.type);
+
+
+        yield return new WaitForSeconds(bocadillosTime);
+
+        obj.SetActive(false);
+
+        yield return null;
+    }
+
 
     void applyLogicCurrEvent()
     {

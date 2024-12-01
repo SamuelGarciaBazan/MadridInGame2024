@@ -52,7 +52,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   firgurePrefabs:
   - {fileID: 4528385064580174017, guid: a039171b68b9cd749876710dd076fbf8, type: 3}
   - {fileID: 7622725621521450277, guid: 52ecb020c95bd964f88e7cca3a8bb895, type: 3}
@@ -61,10 +60,10 @@ MonoBehaviour:
   - {fileID: 9079427351798256331, guid: fd72e12b1c9c42f4caa7f3dd404a96df, type: 3}
   nFigures: 4
   config:
-    typeChances: 00000000640000000000000000000000
+    typeChances: 19000000190000001900000019000000
     levels: 0000000001000000
     levelsChances: 460000001e000000
-    roundsWithRoad: 0200000005000000
+    roundsWithRoad: 03000000
 --- !u!114 &4559332553820217097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +85,7 @@ MonoBehaviour:
   buttonNextTurn: {fileID: 0}
   buttonFinishLevel: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  bocadillosTime: 4
 --- !u!114 &1411296099036708861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedEventsList:
-  - roundTime: 3
+  - roundTime: 5
     fixedEvents:
     - type: 0
-      cantidad: -5
+      cantidad: 5
       targetNodeIndex: 1
 --- !u!114 &1203891185359973871
 MonoBehaviour:
@@ -118,9 +118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnManager: {fileID: 4559332553820217097}
   config:
-    typeChances: 32000000000000000000000000000000
-    cantidades: 010000000200000003000000
-    cantidadesChances: 5a0000000500000005000000
+    typeChances: 19000000190000001900000019000000
+    cantidades: 0100000002000000
+    cantidadesChances: 5000000014000000
     nodesChances: 1400000014000000140000001400000014000000
     typeChancesUniform: 0
     cantidadesUniform: 2
