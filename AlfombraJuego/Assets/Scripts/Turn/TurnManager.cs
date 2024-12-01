@@ -233,9 +233,23 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    void checkWinDefeatConditions()
+    bool checkWinDefeatConditions()
     {
-        
+        int a = nodosManager.transform.childCount;
+        int sum = 0;
+        int sumatorio = 0;
+        for (int i = 0; i < nodosManager.transform.childCount; i++) {
+            List<int> brr = nodosManager.transform.GetChild(i).GetComponent<Nodo>().getGlobalStates();
+            
+            foreach(int j in brr) {
+                if (j < 0) sumatorio++;
+            }
+            if (sumatorio > 0) sum++;
+        }
+
+        if (sum > 2) return false;
+
+        return true;
     }
 
     public void AnimHalfWay() {
@@ -290,8 +304,18 @@ public class TurnManager : MonoBehaviour
 
 
     public void FinishLevel() {
-        checkWinDefeatConditions();
+        
         gameOverPanel.SetActive(true);
+        if (checkWinDefeatConditions()) {
+            gameOverPanel.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+            gameOverPanel.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+        }
+
+        else {
+            gameOverPanel.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+            gameOverPanel.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+
+        }
     }
 
     public void activaBocadillosFixed()
