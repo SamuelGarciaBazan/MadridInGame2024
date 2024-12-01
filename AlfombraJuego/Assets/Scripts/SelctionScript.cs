@@ -22,6 +22,8 @@ public class SelctionScript : MonoBehaviour
     NodosManager nodeManager;
     CarreterasManager carreterasManager;
 
+    [SerializeField]
+    Outline mallaCajaConOutliner;
 
     Nodo n1;
     Nodo n2;
@@ -58,6 +60,9 @@ public class SelctionScript : MonoBehaviour
                 //previousScale = transform.localScale;
                 objectReference.GetChild(0).transform.localScale = objectReference.GetChild(0).transform.localScale * scaleMultiplier;
             }
+
+            mallaCajaConOutliner.enabled = true;
+
         }
     }
 
@@ -65,6 +70,8 @@ public class SelctionScript : MonoBehaviour
     {
         RaycastHit hit;
         nodeManager.enableOutline(false);
+        mallaCajaConOutliner.enabled = false;
+
         //restauramos la escala
         objectReference.GetChild(0).transform.localScale = objectReference.GetChild(0).transform.localScale / scaleMultiplier;
 
@@ -148,6 +155,8 @@ public class SelctionScript : MonoBehaviour
         RaycastHit hit;
 
         carreterasManager.enableOutline(false);
+        mallaCajaConOutliner.enabled = false;
+
 
         // CASO 1 : DEL TREN A UNA CARRETERA
         if (Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Carretera")) &&    // Si se suelta en un nodo
@@ -318,6 +327,7 @@ public class SelctionScript : MonoBehaviour
             carreterasManager.transform.GetChild(i).GetComponent<Outline>().enabled = false;
         }
 
+        mallaCajaConOutliner.enabled = false;
     }
 
     // Update is called once per frame
