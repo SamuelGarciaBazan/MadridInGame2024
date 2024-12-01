@@ -16,6 +16,7 @@ public class NodeUIManager : MonoBehaviour
 
     Nodo mNode;
 
+    public List<int> lastList;
     public void updateUI(List<int> lst)
     {
         //Debug.Log(lst);
@@ -31,6 +32,9 @@ public class NodeUIManager : MonoBehaviour
             if (lst[i] >= 3) t.sprite = imgs[6];
             i++;
         }
+
+        lastList = new List<int>(lst);
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +45,7 @@ public class NodeUIManager : MonoBehaviour
             t.sprite = imgs[3];
         }
 
-        imgs[0].
+        //imgs[0].
 
     }
 
