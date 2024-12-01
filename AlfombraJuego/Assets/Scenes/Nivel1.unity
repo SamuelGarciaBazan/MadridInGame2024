@@ -6521,10 +6521,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManoJugable
       objectReference: {fileID: 0}
-    - target: {fileID: 5649916906154856622, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
-      propertyPath: veticalOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7078794747831596773, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.61
@@ -6568,39 +6564,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4902923206107494028, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4849365470451078115}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
 --- !u!4 &4849365470451078113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6140791883721993001, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
   m_PrefabInstance: {fileID: 4849365470451078112}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4849365470451078114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4902923206107494028, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+--- !u!114 &4849365470451078115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4486853784903925675, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
   m_PrefabInstance: {fileID: 4849365470451078112}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4849365470451078115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4849365470451078114}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0.9986514, b: 0, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &6290003699341244266
 PrefabInstance:
   m_ObjectHideFlags: 0
