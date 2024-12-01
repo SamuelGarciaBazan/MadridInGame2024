@@ -16,7 +16,7 @@ public class GameplayUIManager : MonoBehaviour
 
     public void updateUI()
     {
-        acciones.text = "Acciones: " +turnManager.CurrentActions;
+        acciones.text = turnManager.CurrentActions.ToString();
         turno.text = "Turno " +turnManager.CurrentRound;
         if(turnManager.CurrentActions == 0)
         {
