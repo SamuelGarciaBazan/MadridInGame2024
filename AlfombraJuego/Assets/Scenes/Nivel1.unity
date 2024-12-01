@@ -2787,7 +2787,7 @@ MonoBehaviour:
   reference: {fileID: 69980211}
   heith: 3
   turnManager: {fileID: 1428736586}
-  scaleMultiplier: 3
+  scaleMultiplier: 1.5
 --- !u!114 &1219242708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3385,6 +3385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28181276763750086, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+      propertyPath: turnManager
+      value: 
+      objectReference: {fileID: 1428736586}
     - target: {fileID: 1610239858342381150, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: buttonImage
       value: 

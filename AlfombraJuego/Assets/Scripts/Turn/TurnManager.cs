@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using static RandomDropper;
 using static RandomEvents;
 
@@ -259,6 +259,43 @@ public class TurnManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
+    public void activaBocadillosFixed()
+    {
+        print("activa");
+
+        var lista = fixedEvents.getFirstFixedEvents();
+
+        for (int i = 0; i< lista.Count; i++)
+        {
+            var data = lista[i];    
+
+            var obj = nodosManager.GetNodes()[data.targetNodeIndex].transform.GetChild(1).gameObject;
+            obj.SetActive(true);
+
+            obj.GetComponent<NodoUIBocadillo>().setBocadillo(data.type);
+
+            //obj.GetComponent<Image>().color =  Color.red;
+            
+        }
+    }
+
+    public void desacticaBocadillosFixed()
+    {
+        print("desactiva");
+        var lista = fixedEvents.getFirstFixedEvents();
+
+        for (int i = 0; i< lista.Count; i++)
+        {
+            var data = lista[i];    
+
+            var obj = nodosManager.GetNodes()[data.targetNodeIndex].transform.GetChild(1).gameObject;
+            obj.SetActive(false);
+
+
+            //obj.GetComponent<Image>().color =  Color.red;
+            
+        }
+    }
 
     void Start()
     {
