@@ -31,6 +31,15 @@ public class NodosManager : MonoBehaviour
 
     public TransitivityMode GetTransitivityMode() { return transitivityMode; }
 
+
+    public void enableOutline(bool enabled)
+    {
+        foreach(var node in GetComponentsInChildren<Outline>())
+        {
+            node.enabled = enabled;
+        }
+    }
+
     public List<Nodo> GetNodes()
     {
         return nodes;
