@@ -328,7 +328,6 @@ public class TurnManager : MonoBehaviour
             lose.SetActive(true);
             continueButton.onClick.RemoveAllListeners();
             continueButton.onClick.AddListener(MainMenu);
-
         }
     }
 

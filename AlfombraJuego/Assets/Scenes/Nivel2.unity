@@ -3409,6 +3409,27 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+--- !u!114 &1261138549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1424222447403869444, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+  m_PrefabInstance: {fileID: 1261138548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1261138550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7934686032499325267, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+  m_PrefabInstance: {fileID: 1261138548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1261138551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 837262435514512662, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
+  m_PrefabInstance: {fileID: 1261138548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1335415589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6382,6 +6403,14 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1261138551}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: lose
+      value: 
+      objectReference: {fileID: 1261138550}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: mano
       value: 
       objectReference: {fileID: 2142702817}
@@ -6401,6 +6430,10 @@ PrefabInstance:
       propertyPath: buttonNextTurn
       value: 
       objectReference: {fileID: 257628786}
+    - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1261138549}
     - target: {fileID: 4559332553820217097, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: buttonFinishLevel
       value: 
