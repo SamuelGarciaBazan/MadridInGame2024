@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class GameplayUIManager : MonoBehaviour
 {
@@ -20,11 +20,11 @@ public class GameplayUIManager : MonoBehaviour
         turno.text = "Turno " +turnManager.CurrentRound;
         if(turnManager.CurrentActions == 0)
         {
-            buttonImage.GetComponent<Image>().tintColor = Color.yellow;
+            buttonImage.GetComponent<Image>().color = Color.yellow;
         }
         else
         {
-            buttonImage.GetComponent<Image>().tintColor = Color.white;
+            buttonImage.GetComponent<Image>().color = Color.white;
         }
     }
 

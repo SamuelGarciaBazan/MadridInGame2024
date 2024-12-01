@@ -835,6 +835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acciones: {fileID: 7058488719091790242}
   turno: {fileID: 5875119489878198665}
+  buttonImage: {fileID: 4349535526905467563}
 --- !u!114 &8565363275884865413
 MonoBehaviour:
   m_ObjectHideFlags: 0
