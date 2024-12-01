@@ -1324,11 +1324,12 @@ MonoBehaviour:
   audioSource: {fileID: 98273360}
   musicSource: {fileID: 1024352188}
   sounds:
-  - {fileID: 8300000, guid: 39e7eb3d63b0b1745a25cb3c21301b4a, type: 3}
-  - {fileID: 8300000, guid: 195a9cddb1ddb5e42806d7fb123ea963, type: 3}
-  - {fileID: 8300000, guid: 195a9cddb1ddb5e42806d7fb123ea963, type: 3}
-  - {fileID: 8300000, guid: 195a9cddb1ddb5e42806d7fb123ea963, type: 3}
+  - {fileID: 8300000, guid: 2e6f7378f5a581f40a8dba9b41d0de35, type: 3}
+  - {fileID: 8300000, guid: 0ef172c59bdd45d44a502198cd0841ab, type: 3}
+  - {fileID: 8300000, guid: 57a7db44c25461748ae234f359c01d4b, type: 3}
+  - {fileID: 8300000, guid: c1a9d8831fb8f0549b6fcf7a5ca1938c, type: 3}
   - {fileID: 8300000, guid: b8e6784bd229643489fcbdb4769b86e2, type: 3}
+  musicClip: {fileID: 0}
 --- !u!4 &797409876
 Transform:
   m_ObjectHideFlags: 0
@@ -1474,8 +1475,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 09016630827367c49a67786078995e7d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 09016630827367c49a67786078995e7d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

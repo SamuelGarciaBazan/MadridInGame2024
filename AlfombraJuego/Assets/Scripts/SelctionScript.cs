@@ -37,6 +37,7 @@ public class SelctionScript : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable")))
         {
+            SoundManager.THIS.PlaySoundByIndex(4);
             preDragPosition = hit.transform.position;
             objectReference = hit.transform;
             reference.gameObject.SetActive(true);
@@ -240,7 +241,6 @@ public class SelctionScript : MonoBehaviour
             //click
             if (context.performed/*&& Physics.Raycast(camray, out hit, 1000, LayerMask.GetMask("Drageable"))*/)
             {
-                SoundManager.THIS.PlaySoundByIndex(4);
                 ProccesDragable(ref camray);
             }
             //release cuando sujetamos una ficha

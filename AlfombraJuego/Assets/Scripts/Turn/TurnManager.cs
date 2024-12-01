@@ -314,6 +314,7 @@ public class TurnManager : MonoBehaviour
     {
         initializeTurn();
         debugFigureSet();
+        SoundManager.THIS.PlayMusic();
     }
 
 }
