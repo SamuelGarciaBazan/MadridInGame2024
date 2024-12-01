@@ -660,6 +660,218 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329682159}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &345535302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: caja
+      value: 
+      objectReference: {fileID: 4849365470451078113}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: tutoBg
+      value: 
+      objectReference: {fileID: 345535303}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: tutoText
+      value: 
+      objectReference: {fileID: 345535304}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: turnManager
+      value: 
+      objectReference: {fileID: 1428736586}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: nodes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'nodes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1969318429}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'nodes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1944580103}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'nodes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 711619391}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'nodes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2084759384}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'nodes.Array.data[4]'
+      value: 
+      objectReference: {fileID: 468028011}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: textosTuto.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'textosTuto.Array.data[6]'
+      value: "Cuando ya no te queden puntos de acci\xF3n, pasa al siguiente d\xEDa. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'textosTuto.Array.data[7]'
+      value: "\xA1Oh no! Ha surgido un problema en uno de los barrios. Debes remediarlo
+        lo antes posible. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'textosTuto.Array.data[8]'
+      value: 'Mi estructura favorita son las carreteras. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'textosTuto.Array.data[9]'
+      value: "Gracias a ellas, los barrios pueden compartir sus progresos, y toda
+        la ciudad es m\xE1s feliz en su conjunto. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'textosTuto.Array.data[10]'
+      value: "Lo m\xE1s importante es prepararte para la cat\xE1strofe que se avecina.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: 'textosTuto.Array.data[11]'
+      value: "Si consigues que la mayor\xEDa de tus barrios sean felices despu\xE9s
+        de la cat\xE1strofe, habr\xE1s demostrado ser el mejor alcalde de tu ciudad."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340148252453186338, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604318163557535091, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_Name
+      value: CanvasTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 890119093}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tutorial, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065544623341762482, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+--- !u!1 &345535303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6215233368506865343, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+  m_PrefabInstance: {fileID: 345535302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &345535304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1299153876643212569, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+  m_PrefabInstance: {fileID: 345535302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &345755462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,6 +1336,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860448242}
   m_Mesh: {fileID: -5463795707668966770, guid: a3e24f48aafc54e41ab7e3ccdbdc39a1, type: 3}
+--- !u!114 &890119093 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 149275157537124761, guid: 9f4175fea150c354f99021429461ecbb, type: 3}
+  m_PrefabInstance: {fileID: 345535302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b0ab02462f64e42b27cd2b85a15397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &898735588
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5847,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+--- !u!4 &4849365470451078113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6140791883721993001, guid: 636ba7a3681052a459ad11dcdb56133b, type: 3}
+  m_PrefabInstance: {fileID: 4849365470451078112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6290003699341244266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5735,3 +5963,4 @@ SceneRoots:
   - {fileID: 176720298}
   - {fileID: 358231597066710529}
   - {fileID: 533771011}
+  - {fileID: 345535302}
