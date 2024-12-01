@@ -46,6 +46,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField]
     float bocadillosTime;
 
+    [SerializeField]
+    Animator animator;
+
+
     public int getNodosCount()
     {
         return nodosManager.GetNodes().Count;
@@ -226,9 +230,19 @@ public class TurnManager : MonoBehaviour
         
     }
 
+    public void AnimHalfWay() {
+        initializeTurn();
+    }
+
+    public void AnimDone() {
+
+    }
+
     public void nextTurn()
     {
+        buttonNextTurn.SetActive(false);
         currentRound++;
+        animator.SetTrigger("Pipi");
 
 
         for (int i = 0; i < mano.transform.childCount; i++) {
@@ -246,7 +260,7 @@ public class TurnManager : MonoBehaviour
            
         }
 
-        initializeTurn();
+        //initializeTurn();
         getInput();       
         debugNextTurn();
 
