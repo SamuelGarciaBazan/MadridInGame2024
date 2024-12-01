@@ -254,6 +254,7 @@ public class TurnManager : MonoBehaviour
                 if (j < 0) sumatorio++;
             }
             if (sumatorio > 0) sum++;
+            sumatorio = 0;
         }
 
         if (sum > 2) return false;
