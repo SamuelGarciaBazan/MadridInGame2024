@@ -3405,7 +3405,7 @@ PrefabInstance:
       propertyPath: m_text
       value: '
 
-        Emergencia de seguridad general'
+        Emergencia general'
       objectReference: {fileID: 0}
     - target: {fileID: 7953594464964294247, guid: fb028eb2ae63f784e84f542a4b809680, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6322,7 +6322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].roundTime
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.size
@@ -6334,19 +6334,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[1].type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[2].type
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[3].type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[4].type
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[0].cantidad
@@ -6354,7 +6354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[1].cantidad
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[2].cantidad
@@ -6362,11 +6362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[3].cantidad
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[4].cantidad
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1411296099036708861, guid: fbc5014b8a539fe4394092ba4a57197d, type: 3}
       propertyPath: fixedEventsList.Array.data[0].fixedEvents.Array.data[0].targetNodeIndex
